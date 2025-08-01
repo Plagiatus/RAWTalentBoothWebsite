@@ -1,5 +1,6 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.png';
+	import favicon from "$lib/assets/favicon.png";
+	import metaPreview from "$lib/assets/meta_preview.png";
 
 	let { children } = $props();
 </script>
@@ -7,12 +8,46 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 	<title>RAW Talent @ gamescom 2025</title>
+
+	<!-- Primary Meta Tags -->
+	<meta name="title" content="RAW Talent @ gamescom 2025" />
+	<meta
+		name="description"
+		content="RAW Talent brings together ~160 students from 11 universities to showcase the talents of the next generation of game devs at gamescom 2025."
+	/>
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://rawtalentbooth.com/" />
+	<meta property="og:title" content="RAW Talent @ gamescom 2025" />
+	<meta
+		property="og:description"
+		content="RAW Talent brings together ~160 students from 11 universities to showcase the talents of the next generation of game devs at gamescom 2025."
+	/>
+	<meta
+		property="og:image"
+		content={metaPreview}
+	/>
+
+	<!-- X (Twitter) -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://rawtalentbooth.com/" />
+	<meta property="twitter:title" content="RAW Talent @ gamescom 2025" />
+	<meta
+		property="twitter:description"
+		content="RAW Talent brings together ~160 students from 11 universities to showcase the talents of the next generation of game devs at gamescom 2025."
+	/>
+	<meta
+		property="twitter:image"
+		content={metaPreview}
+	/>
+
+	<!-- Meta Tags Generated with https://metatags.io -->
 </svelte:head>
 
 <main>
 	{@render children?.()}
 </main>
-
 
 <style>
 	:root {
@@ -24,9 +59,21 @@
 		--color-blueprint-box-10: color-mix(in srgb, #1c398e 10%, transparent);
 
 		--color-blueprint-border: #8ec5ff;
-		--color-blueprint-border-50: color-mix(in srgb, var(--color-blueprint-border) 50%, transparent);
-		--color-blueprint-border-30: color-mix(in srgb, var(--color-blueprint-border) 30%, transparent);
-		--color-blueprint-border-20: color-mix(in srgb, var(--color-blueprint-border) 20%, transparent);
+		--color-blueprint-border-50: color-mix(
+			in srgb,
+			var(--color-blueprint-border) 50%,
+			transparent
+		);
+		--color-blueprint-border-30: color-mix(
+			in srgb,
+			var(--color-blueprint-border) 30%,
+			transparent
+		);
+		--color-blueprint-border-20: color-mix(
+			in srgb,
+			var(--color-blueprint-border) 20%,
+			transparent
+		);
 
 		--color-text: #bedbff;
 		--color-text-2: var(--color-blueprint-border);
@@ -44,16 +91,30 @@
 		background-color: var(--color-blueprint-base);
 		background-image: 
 		/* main grid */
-		linear-gradient(var(--color-blueprint-grid) 4px, transparent 1px), 
-		linear-gradient(90deg, var(--color-blueprint-grid) 4px, transparent 1px),
-		/* sub-grid */
-		linear-gradient(transparent calc(50% - 1px), var(--color-blueprint-grid) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
-		linear-gradient(90deg, transparent calc(50% - 1px), var(--color-blueprint-grid) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px));
+			linear-gradient(var(--color-blueprint-grid) 4px, transparent 1px),
+			linear-gradient(
+				90deg,
+				var(--color-blueprint-grid) 4px,
+				transparent 1px
+			),
+			/* sub-grid */
+				linear-gradient(
+					transparent calc(50% - 1px),
+					var(--color-blueprint-grid) calc(50% - 1px) calc(50% + 1px),
+					transparent calc(50% + 1px)
+				),
+			linear-gradient(
+				90deg,
+				transparent calc(50% - 1px),
+				var(--color-blueprint-grid) calc(50% - 1px) calc(50% + 1px),
+				transparent calc(50% + 1px)
+			);
 		background-size: var(--bg-size) var(--bg-size);
 
 		color: var(--color-text);
 
-		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+			"Liberation Mono", "Courier New", monospace;
 	}
 	:global(.box) {
 		border: 1px solid var(--color-blueprint-border-30);

@@ -8,13 +8,13 @@
     import gallery1 from "$lib/assets/2024/pictures/01.jpg";
     import gallery2 from "$lib/assets/2024/pictures/02.jpg";
     import gallery3 from "$lib/assets/2024/pictures/03.jpg";
-    import gallery4 from "$lib/assets/2024/pictures/04.jpg";
+    import gallery4 from "$lib/assets/2024/pictures/04_.jpg";
     import gallery5 from "$lib/assets/2024/pictures/05.jpg";
     import gallery6 from "$lib/assets/2024/pictures/06.jpg";
     import gallery1thumb from "$lib/assets/2024/pictures/01_thumb.jpg";
     import gallery2thumb from "$lib/assets/2024/pictures/02_thumb.jpg";
     import gallery3thumb from "$lib/assets/2024/pictures/03_thumb.jpg";
-    import gallery4thumb from "$lib/assets/2024/pictures/04_thumb.jpg";
+    import gallery4thumb from "$lib/assets/2024/pictures/04_thum.jpg";
     import gallery5thumb from "$lib/assets/2024/pictures/05_thumb.jpg";
     import gallery6thumb from "$lib/assets/2024/pictures/06_thumb.jpg";
     import CornerBox from "../CornerBox.svelte";

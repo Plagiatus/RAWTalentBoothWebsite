@@ -89,7 +89,7 @@
 		min-height: 100vh;
 		--bg-size: 100px;
 		background-color: var(--color-blueprint-base);
-		background-image: 
+		--grid: 
 		/* main grid */
 			linear-gradient(var(--color-blueprint-grid) 4px, transparent 1px),
 			linear-gradient(
@@ -109,6 +109,7 @@
 				var(--color-blueprint-grid) calc(50% - 1px) calc(50% + 1px),
 				transparent calc(50% + 1px)
 			);
+		background-image: var(--grid);
 		background-size: var(--bg-size) var(--bg-size);
 
 		color: var(--color-text);

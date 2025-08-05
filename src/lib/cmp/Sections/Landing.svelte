@@ -4,65 +4,95 @@
     import CornerBox from "../CornerBox.svelte";
 </script>
 
-<section id="top">
-    <div class="top-inner">
-        <div class="location box rounded bg-more">
-            <MapPin />
-            HALL 10.2 • INDIE AREA • KOELNMESSE
-        </div>
+<section id="landing">
+    <div id="opener"></div>
+    <div id="title-card">
         <div class="logo">
             <CornerBox classes="bg-more center-center">
                 <img src={logo} alt="RAW Talent" class="logo-img" />
             </CornerBox>
+            
         </div>
-        <div class="info">
-            <CornerBox classes="bg">
-                At the heart of gamescom 2025, RAW TALENT brings together 160
-                students from 11 public universities across Germany and Austria
-                to showcase nearly 50 unique indie games. For the first time,
-                student projects take center stage in the buzzing Indie Area
-                (Hall 10.2), offering visitors a firsthand look at the next
-                generation of game developers.
-            </CornerBox>
+        <div class="location box rounded bg-more">
+            <MapPin />
+            HALL 10.2 • INDIE AREA • KOELNMESSE
         </div>
-        <div class="cards">
-            <div class="card box bg">
-                <div class="icon">
-                    <Calendar />
+    </div>
+    <div id="content-start">
+        <div class="top-inner">
+            <div class="info">
+                <CornerBox classes="bg">
+                    At the heart of gamescom 2025, RAW TALENT brings together
+                    160 students from 11 public universities across Germany and
+                    Austria to showcase nearly 50 unique indie games. For the
+                    first time, student projects take center stage in the
+                    buzzing Indie Area (Hall 10.2), offering visitors a
+                    firsthand look at the next generation of game developers.
+                </CornerBox>
+            </div>
+            <div class="cards">
+                <div class="card box bg">
+                    <div class="icon">
+                        <Calendar />
+                    </div>
+                    <span class="title">Dates</span>
+                    <span class="content">Aug 21-25</span>
                 </div>
-                <span class="title">Dates</span>
-                <span class="content">Aug 21-25</span>
-            </div>
-            <div class="card box bg">
-                <div class="icon">
-                    <Gamepad2 />
+                <div class="card box bg">
+                    <div class="icon">
+                        <Gamepad2 />
+                    </div>
+                    <span class="title">Games</span>
+                    <span class="content">38 Titles</span>
                 </div>
-                <span class="title">Games</span>
-                <span class="content">38 Titles</span>
+                <div class="card box bg">
+                    <span class="icon">
+                        <MapPin />
+                    </span>
+                    <span class="title">Location</span>
+                    <span class="content">Gamescom, Cologne</span>
+                </div>
             </div>
-            <div class="card box bg">
-                <span class="icon">
-                    <MapPin />
-                </span>
-                <span class="title">Location</span>
-                <span class="content">Gamescom, Cologne</span>
-            </div>
-        </div>
 
-        <div class="coming-soon">More Info coming soon.</div>
+            <div class="coming-soon">More Info coming soon.</div>
+        </div>
     </div>
 </section>
 
 <style>
-    #top {
-        min-height: 100vh;
+    #opener {
+        height: 900px;
+        max-height: 100vh;
+        /* background-color: var(--color-blueprint-base); */
+        background-image: url("/assets/opener_transparent.png");
+        background-position: center center;
+        background-size: cover;
+        /* background-attachment: fixed; */
+        mask-image: linear-gradient(black, transparent);
+        animation: scrollbg 5s linear infinite;
+    }
+    #title-card {
+        margin-top: -50vh;
+        height: 50vh;
+        background-image: linear-gradient(to bottom, transparent, var(--color-blueprint-base));
+        padding: var(--spacing-6);   
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+    }
+    #landing {
+        --max-width: calc(100vw - var(--spacing-12));
+    }
+    #content-start {
         display: grid;
         place-items: center;
-        --max-width: calc(100vw - var(--spacing-12));
-        padding: var(--spacing-6);
+        padding: var(--spacing-6);    
     }
 
     .top-inner {
+        position: sticky;
+        top: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -80,6 +110,7 @@
     .logo {
         margin-bottom: var(--spacing-12);
         width: var(--max-width);
+        background-color: var(--color-blueprint-grid);
     }
     .logo-img {
         width: 80vw;
@@ -130,8 +161,10 @@
     }
 
     @media (width >= 40rem) {
-        #top {
+        #landing {
             --max-width: calc(40rem - 2 * var(--spacing-12));
+        }
+        #content-start, #title-card {
             padding: var(--spacing-12);
         }
         .info {
@@ -139,7 +172,7 @@
         }
     }
     @media (width >= 60rem) {
-        #top {
+        #landing {
             --max-width: calc(60rem - 2 * var(--spacing-12));
         }
         .info {

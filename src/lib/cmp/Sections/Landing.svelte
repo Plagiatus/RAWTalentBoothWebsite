@@ -53,8 +53,6 @@
                     <span class="content">Gamescom, Cologne</span>
                 </div>
             </div>
-
-            <div class="coming-soon">More Info coming soon.</div>
         </div>
     </div>
 </section>
@@ -154,10 +152,6 @@
     }
     .content {
         grid-area: content;
-    }
-
-    .coming-soon {
-        margin-top: var(--spacing-12);
     }
 
     @media (width >= 40rem) {

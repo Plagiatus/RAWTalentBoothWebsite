@@ -54,9 +54,9 @@
 		--color-blueprint-base: #001c3a;
 		--color-blueprint-grid: #0b2a48;
 		--color-blueprint-box: #1c398e;
-		--color-blueprint-box-30: color-mix(in srgb, #1c398e 30%, transparent);
-		--color-blueprint-box-20: color-mix(in srgb, #1c398e 20%, transparent);
-		--color-blueprint-box-10: color-mix(in srgb, #1c398e 10%, transparent);
+		--color-blueprint-box-30: color-mix(in srgb, var(--color-blueprint-box) 30%, transparent);
+		--color-blueprint-box-20: color-mix(in srgb, var(--color-blueprint-box) 20%, transparent);
+		--color-blueprint-box-10: color-mix(in srgb, var(--color-blueprint-box) 10%, transparent);
 
 		--color-blueprint-border: #8ec5ff;
 		--color-blueprint-border-50: color-mix(
@@ -138,6 +138,12 @@
 	}
 	:global(.box.bg-more:hover) {
 		background-color: var(--color-blueprint-box-30);
+	}
+	:global(.box.bg-most) {
+		background-color: color-mix(in srgb, var(--color-blueprint-box) 70%, transparent);
+	}
+	:global(.box.bg-most:hover) {
+		background-color: color-mix(in srgb, var(--color-blueprint-box) 80%, transparent);
 	}
 
 	:global(.lucide-icon) {

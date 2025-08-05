@@ -1,7 +1,7 @@
 <script lang="ts">
     import logo from "$lib/assets/RAWTalentLogo.svg";
     import { Calendar, Gamepad2, MapPin } from "@lucide/svelte";
-    import CornerBox from "./CornerBox.svelte";
+    import CornerBox from "../CornerBox.svelte";
 </script>
 
 <section id="top">

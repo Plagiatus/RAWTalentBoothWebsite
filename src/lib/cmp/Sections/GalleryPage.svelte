@@ -17,12 +17,11 @@
     import gallery4thumb from "$lib/assets/2024/pictures/04_thum.jpg";
     import gallery5thumb from "$lib/assets/2024/pictures/05_thumb.jpg";
     import gallery6thumb from "$lib/assets/2024/pictures/06_thumb.jpg";
-    import CornerBox from "../CornerBox.svelte";
 </script>
 
 <section id="gallery" class="center-center">
-    <CornerBox>
-        <h2>Last Years Memories</h2>
+    <h2>Last Years Memories</h2>
+    <div id="gallery-wrapper" class="box rounded">
         <LightboxGallery>
             <svelte:fragment slot="thumbnail">
                 <div class="thumbnails">
@@ -65,17 +64,19 @@
                 <img src={gallery6} alt="" />
             </GalleryImage>
         </LightboxGallery>
-    </CornerBox>
+    </div>
 </section>
 
 <style>
-    #gallery  {
+    #gallery {
         margin-top: var(--spacing-12);
     }
-    
+
     h2 {
         text-align: center;
-        margin-bottom: var(--spacing-6);
+    }
+    #gallery-wrapper {
+        margin-top: var(--spacing-6);
     }
     .thumbnails {
         display: flex;

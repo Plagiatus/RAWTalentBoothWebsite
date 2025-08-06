@@ -86,6 +86,7 @@
 		--spacing-12: calc(var(--spacing) * 12);
 	}
 	main {
+		padding-bottom: var(--spacing-12);
 		min-height: 100vh;
 		--bg-size: 100px;
 		background-color: var(--color-blueprint-base);
@@ -150,5 +151,11 @@
 		width: 1em;
 		height: 1em;
 		display: inline-block;
+	}
+
+	:global(h2) {
+		font-size: 3rem;
+		text-transform: uppercase;
+		text-align: center;
 	}
 </style>

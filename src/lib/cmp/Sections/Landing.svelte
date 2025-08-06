@@ -2,6 +2,7 @@
     import logo from "$lib/assets/RAWTalentLogo.svg";
     import { Calendar, Gamepad2, MapPin } from "@lucide/svelte";
     import CornerBox from "../CornerBox.svelte";
+    import { games } from "$lib/data/games";
 </script>
 
 <section id="landing">
@@ -43,7 +44,7 @@
                         <Gamepad2 />
                     </div>
                     <span class="title">Games</span>
-                    <span class="content">38 Titles</span>
+                    <span class="content">{games.length} Titles</span>
                 </div>
                 <div class="card box bg">
                     <span class="icon">

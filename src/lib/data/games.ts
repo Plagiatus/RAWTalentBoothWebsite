@@ -61,7 +61,7 @@ export const games: Game[] = [
         image:"/assets/2025/games/09_echoes_of_adventure/keyart.png",
         link: "https://store.steampowered.com/app/3504610/Echoes_of_Adventure/",
         uni: "HDA",
-        team: "The Deprecheos",
+        team: "The Deprechoes",
     },
     {
         title: "Hysterie",
@@ -79,7 +79,6 @@ export const games: Game[] = [
     },
     {
         title: "Rite of Red Snow",
-        logo: "/assets/2025/games/12_rite_of_red_snow/logo.png",
         image:"/assets/2025/games/12_rite_of_red_snow/keyart.png",
         link: "https://burningtrashcan.itch.io/rite-of-red-snow",
         uni: "HNU",
@@ -160,7 +159,6 @@ export const games: Game[] = [
     },
     {
         title: "koinori",
-        logo: "/assets/2025/games/23_koinori/logo.png",
         image:"/assets/2025/games/23_koinori/keyart.png",
         link: "https://koinori.carrd.co/",
         uni: "HDA",
@@ -191,7 +189,6 @@ export const games: Game[] = [
     },
     {
         title: "Valkyrie Rising: Hordes of Ragnarök",
-        logo: "/assets/2025/games/27_valkyrie_rising/logo.png",
         image:"/assets/2025/games/27_valkyrie_rising/keyart.png",
         link: "https://store.steampowered.com/app/3214330/Valkyrie_Rising_Hordes_of_Ragnark",
         uni: "Uni Bayreuth",
@@ -273,7 +270,7 @@ export const games: Game[] = [
         image:"/assets/2025/games/37_arcade_machine/keyart.png",
         link: "",
         uni: "TU Graz",
-        team: "GDSG",
+        team: "Game Dev Students Graz",
     },
     {
         title: "Beakstorm",
@@ -297,7 +294,7 @@ export const games: Game[] = [
         image:"/assets/2025/games/40_couponmania/keyart.png",
         link: "https://rekamae.itch.io/couponmania",
         uni: "TH Köln",
-        team: "",
+        team: "Couponmanicas",
     },
     {
         title: "Sequence Jump",
@@ -339,7 +336,7 @@ export const games: Game[] = [
     {
         title: "TAGTILE",
         image:"/assets/2025/games/46_tagtile/keyart.png",
-        link: "https://www.tagtile.io/",
+        link: "https://www.tagtile.io/#wrt",
         uni: "TU Graz",
         team: "TAGTILE Interactive",
     },

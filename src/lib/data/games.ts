@@ -129,7 +129,6 @@ export const games: Game[] = [
     },
     {
         title: "Mountkin",
-        logo: "/assets/2025/games/19_mountkin/logo.png",
         image:"/assets/2025/games/19_mountkin/keyart.png",
         link: "https://basil-bytes-interactive.itch.io/mountkin",
         uni: "HTW",
@@ -359,7 +358,7 @@ export const games: Game[] = [
     {
         title: "Coiny Dungeon",
         image:"/assets/2025/games/49_coiny_dungeon/keyart.png",
-        link: "",
+        link: "https://linktr.ee/Uni_Siegen_Sbh",
         uni: "Uni Siegen",
         team: "SBH",
     }

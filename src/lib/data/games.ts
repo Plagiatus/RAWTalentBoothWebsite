@@ -195,7 +195,6 @@ export const games: Game[] = [
     },
     {
         title: "Sanguis",
-        logo: "/assets/2025/games/28_sanguis/logo.png",
         image:"/assets/2025/games/28_sanguis/keyart.png",
         link: "https://brainctrl.itch.io/sanguis",
         uni: "Uni Bayreuth",

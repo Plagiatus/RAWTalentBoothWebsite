@@ -172,7 +172,6 @@ export const games: Game[] = [
     },
     {
         title: "Bot slash Bot",
-        logo: "/assets/2025/games/25_bot_slash_bot/logo.png",
         image:"/assets/2025/games/25_bot_slash_bot/keyart.png",
         link: "https://store.steampowered.com/app/3151220/BotBot/?l=german",
         uni: "HSMW",

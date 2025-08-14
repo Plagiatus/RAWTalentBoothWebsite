@@ -69,7 +69,7 @@
 
 <style>
     #gallery {
-        margin-top: var(--spacing-12);
+        margin: var(--spacing-12) 0;
     }
 
     h2 {

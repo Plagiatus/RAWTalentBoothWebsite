@@ -1,6 +1,7 @@
 <script lang="ts">
 	import favicon from "$lib/assets/favicon.png";
 	import metaPreview from "$lib/assets/meta_preview.png";
+    import Footer from "$lib/cmp/Footer.svelte";
 
 	let { children } = $props();
 </script>
@@ -49,6 +50,8 @@
 	{@render children?.()}
 </main>
 
+<Footer />
+
 <style>
 	:root {
 		--color-blueprint-base: #001c3a;
@@ -84,6 +87,10 @@
 		--spacing-6: calc(var(--spacing) * 6);
 		--spacing-8: calc(var(--spacing) * 8);
 		--spacing-12: calc(var(--spacing) * 12);
+
+		
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+			"Liberation Mono", "Courier New", monospace;
 	}
 	main {
 		padding-bottom: var(--spacing-12);
@@ -115,8 +122,6 @@
 
 		color: var(--color-text);
 
-		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-			"Liberation Mono", "Courier New", monospace;
 	}
 	:global(.box) {
 		border: 1px solid var(--color-blueprint-border-30);

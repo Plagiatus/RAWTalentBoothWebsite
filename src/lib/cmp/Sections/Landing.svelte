@@ -37,7 +37,7 @@
                         <Calendar />
                     </div>
                     <span class="title">Dates</span>
-                    <span class="content">Aug 21-25</span>
+                    <span class="content">Aug 20-24</span>
                 </div>
                 <div class="card box bg">
                     <div class="icon">

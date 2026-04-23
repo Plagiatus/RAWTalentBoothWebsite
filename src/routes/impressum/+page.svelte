@@ -1,7 +1,5 @@
 <div id="impressum">
 
-    <a href="/" rel="noopener noreferrer">&lt; Return to main page</a>
-
     <h1>Impressum</h1>
     
     <p>
@@ -21,10 +19,7 @@
 
 <style>
     #impressum {
-        padding: var(--spacing-12);
-    }
-    h1 {
-        margin-top: var(--spacing-12);
+        padding: 6rem;
     }
     a {
         color: inherit;

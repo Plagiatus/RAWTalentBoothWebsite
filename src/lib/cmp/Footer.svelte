@@ -1,7 +1,7 @@
 <footer>
     <span><span class="highlight">RAW</span> Talent @ Gamescom</span>
     <nav>
-        <a href="impressum">Impressum/Imprint</a>
+        <a href="/impressum">Impressum/Imprint</a>
     </nav>
 </footer>
 

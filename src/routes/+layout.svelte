@@ -52,11 +52,11 @@
 <style>
 	@font-face {
 		font-family: "Oswald";
-		src: url("style/Oswald.ttf");
+		src: url("/fonts/Oswald.ttf");
 	}
 	@font-face {
 		font-family: "DM Sans";
-		src: url("style/DMSans.ttf");
+		src: url("/fonts/DMSans.ttf");
 	}
 
 	:root {

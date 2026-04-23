@@ -5,10 +5,12 @@
     import GameShowcase from "$lib/cmp/Sections/GameShowcase.svelte";
 
 </script>
-<Landing />
-<GameShowcase />
-<Booth />
-<GalleryPage />
+<main>
+	<Landing />
+	<GameShowcase />
+	<Booth />
+	<GalleryPage />
+</main>
 
 
 <style>
@@ -82,42 +84,42 @@
 		color: var(--color-text);
 
 	}
-	:global(.box) {
+	main :global(.box) {
 		border: 1px solid var(--color-blueprint-border-30);
 		padding: var(--spacing-6);
-	}
+	}main 
 	:global(.rounded) {
 		border-radius: var(--spacing);
 	}
-	:global(.center-center) {
+	main :global(.center-center) {
 		display: grid;
 		place-items: center;
 	}
 
-	:global(.box.bg) {
+	main :global(.box.bg) {
 		background-color: var(--color-blueprint-box-10);
 	}
-	:global(.box.bg-more),
-	:global(.box.bg:hover) {
+	main :global(.box.bg-more),
+	main :global(.box.bg:hover) {
 		background-color: var(--color-blueprint-box-20);
 	}
-	:global(.box.bg-more:hover) {
+	main :global(.box.bg-more:hover) {
 		background-color: var(--color-blueprint-box-30);
 	}
-	:global(.box.bg-most) {
+	main :global(.box.bg-most) {
 		background-color: color-mix(in srgb, var(--color-blueprint-box) 70%, transparent);
 	}
-	:global(.box.bg-most:hover) {
+	main :global(.box.bg-most:hover) {
 		background-color: color-mix(in srgb, var(--color-blueprint-box) 80%, transparent);
 	}
 
-	:global(.lucide-icon) {
+	main :global(.lucide-icon) {
 		width: 1em;
 		height: 1em;
 		display: inline-block;
 	}
 
-	:global(h2) {
+	main :global(h2) {
 		font-size: 3rem;
 		text-transform: uppercase;
 		text-align: center;

@@ -1,7 +1,8 @@
 <script lang="ts">
+    import { page } from '$app/state';
     import logo from "$lib/assets/logos/RAWTalentLogo.svg";
-    let y: number = 0;
-
+    let y: number = $state(0);
+    let archive: number = $derived(parseInt(page.route.id?.substring(1) ?? ""))
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -10,12 +11,19 @@
     <nav class="header-nav">
         <a href="/">
             <img src={logo} alt="RAW Talent" class="header-img" />
+            {#if archive}
+                {archive}
+            {/if}
         </a>
         <ul class="nav-links">
-            <li><a href="/#about">About</a></li>
             <li><a href="/#partners">Partners</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/2025">2025</a></li>
         </ul>
     </nav>
+    {#if archive}
+        <div id="notice">You're browsing an archive of a previous year.</div>
+    {/if}
 </header>
 
 <style>
@@ -46,6 +54,7 @@
     }
     .header-img {
         max-height: 2rem;
+        display: inline-block;
     }
 
     .nav-links {
@@ -57,7 +66,7 @@
         padding: 0;
     }
 
-    .nav-links a {
+    a {
         text-decoration: none;
         font-family: var(--font-display);
         color: var(--color-text-muted);
@@ -68,5 +77,22 @@
     }
     .nav-links a:hover {
         color: var(--color-text-white);
+    }
+
+    #notice {
+        position: absolute;
+        bottom: -3rem;
+        height: 3rem;
+        background-color: var(--highlight);
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    header.scrolled #notice {
+        opacity: 1;
     }
 </style>

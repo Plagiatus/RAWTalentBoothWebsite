@@ -46,7 +46,12 @@
         <div style="margin-top: 5rem;"></div>
         <span class="afterline">Organized by</span>
         <div class="partner-wrapper">
-            <a href="https://www.spielwissenschaft.de/" class="partner">
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.spielwissenschaft.de/"
+                class="partner"
+            >
                 <img class="partner-img" src={dgsw} alt="DGSW Logo" />
                 <span class="partner-name"
                     >Deutsche Gesellschaft für Spielwissenschaft</span
@@ -55,13 +60,23 @@
         </div>
         <span class="afterline">Institutional Sponsors</span>
         <div class="partner-wrapper">
-            <a href="https://www.mfg.de/" class="partner">
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.mfg.de/"
+                class="partner"
+            >
                 <img class="partner-img" src={mfgbw} alt="MFG BW Logo" />
                 <span class="partner-name"
                     >MFG Medien- und Filmgesellschaft Baden-Württemberg</span
                 >
             </a>
-            <a href="https://www.filmstiftung.de" class="partner">
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.filmstiftung.de"
+                class="partner"
+            >
                 <img class="partner-img" src={fs} alt="FS Logo" />
                 <span class="partner-name">Film- und Medienstiftung NRW</span>
             </a>

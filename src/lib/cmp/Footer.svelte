@@ -1,18 +1,28 @@
 <footer>
-    <p>
-        <a href="impressum">Impressum (Imprint)</a>
-    </p>
+    <span><span class="highlight">RAW</span> Talent @ Gamescom</span>
+    <nav>
+        <a href="impressum">Impressum/Imprint</a>
+    </nav>
 </footer>
 
 <style>
     footer {
-        border-top: 1px solid var(--color-blueprint-border);
+        border-top: 1px solid var(--color-blueprint-grid);
         background-color: var(--color-blueprint-base);
         text-align: center;
-        padding: var(--spacing-6) var(--spacing-2);
+        padding: 1.25rem 2rem;
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
     }
 
     a {
-        color: var(--color-text);
+        color: var(--color-text-muted);
+        text-decoration: none;
+    }
+    a:hover {
+        color: var(--color-text-white);
     }
 </style>

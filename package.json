@@ -1,7 +1,7 @@
 {
 	"name": "rawtalentboothwebsite",
 	"private": true,
-	"version": "0.0.1",
+	"version": "2026.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",

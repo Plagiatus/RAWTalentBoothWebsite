@@ -1,7 +1,7 @@
 <script lang="ts">
-    import logo from "$lib/assets/RAWTalentLogo.svg";
+    import logo from "$lib/assets/logos/RAWTalentLogo.svg";
     import { Calendar, Gamepad2, MapPin } from "@lucide/svelte";
-    import CornerBox from "../CornerBox.svelte";
+    import CornerBox from "../../CornerBox.svelte";
     import { games } from "$lib/data/games";
 </script>
 

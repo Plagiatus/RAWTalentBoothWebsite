@@ -14,7 +14,7 @@
 
 
 <style>
-	:root {
+	main {
 		--color-blueprint-base: #001c3a;
 		--color-blueprint-grid: #0b2a48;
 		--color-blueprint-box: #1c398e;

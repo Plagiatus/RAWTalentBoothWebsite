@@ -63,7 +63,7 @@
         height: 900px;
         max-height: 100vh;
         /* background-color: var(--color-blueprint-base); */
-        background-image: url("/assets/opener_transparent.png");
+        background-image: url("/assets/2025/opener_transparent.png");
         background-position: center center;
         background-size: cover;
         /* background-attachment: fixed; */

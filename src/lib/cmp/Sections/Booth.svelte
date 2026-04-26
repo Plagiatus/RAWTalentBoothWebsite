@@ -1,7 +1,7 @@
 <script>
     import { MapPin } from "@lucide/svelte";
     import CornerBox from "../CornerBox.svelte";
-    import location from "$lib/assets/gamescom_location.jpg";
+    import location from "$lib/assets/2025/gamescom_location.jpg";
 
 </script>
 <section id="booth">
@@ -21,7 +21,7 @@
 
 <style>
     #booth {
-        background-image: url("/assets/booth_preview.png");
+        background-image: url("/assets/2025/booth_preview.png");
         background-size: cover;
         background-position: center center;
         background-attachment: fixed;

@@ -3,6 +3,19 @@
     import dgsw from "$lib/assets/logos/dgsw_logo.svg";
     import mfgbw from "$lib/assets/logos/mfgbw_logo.svg";
     import fs from "$lib/assets/logos/fs_logo.png";
+
+    import hdm from "$lib/assets/logos/unis/hdm_stuttgart.svg";
+    import hda from "$lib/assets/logos/unis/hs_darmstadt.svg";
+    import hfu from "$lib/assets/logos/unis/hs_furtwangen.svg";
+    import hsmw from "$lib/assets/logos/unis/hs_mittweida.svg";
+    import hsnu from "$lib/assets/logos/unis/hs_neu_ulm.png";
+    import htw from "$lib/assets/logos/unis/htw_berlin.svg";
+    import tum from "$lib/assets/logos/unis/tu_münchen.svg";
+    import uba from "$lib/assets/logos/unis/uni_bayreuth.svg";
+    import unsi from "$lib/assets/logos/unis/uni_siegen.svg";
+    import ut from "$lib/assets/logos/unis/uni_tuebingen.svg";
+    import tug from "$lib/assets/logos/unis/tu_graz.svg";
+
 </script>
 
 <section id="hero" class="hero">
@@ -82,6 +95,96 @@
             </a>
         </div>
         <span class="afterline">Participating Universities</span>
+        <div class="partner-wrapper">
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://hdm-stuttgart.de/"
+                class="partner"
+            >
+                <img class="partner-img" src={hdm} alt="Hochschule der Medien Stuttgart" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://h-da.de/"
+                class="partner"
+            >
+                <img class="partner-img" src={hda} alt="Hochschule Darmstadt" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://hs-furtwangen.de"
+                class="partner"
+            >
+                <img class="partner-img" src={hfu} alt="Hochschule Furtwangen" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.hs-mittweida.de/"
+                class="partner"
+            >
+                <img class="partner-img" src={hsmw} alt="Hochschule Mittweida" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.hnu.de/"
+                class="partner"
+            >
+                <img class="partner-img" src={hsnu} alt="Hochschule Neu-Ulm" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.htw-berlin.de/"
+                class="partner"
+            >
+                <img class="partner-img" src={htw} alt="HTW Berlin" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.tum.de/"
+                class="partner"
+            >
+                <img class="partner-img" src={tum} alt="TU München" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.uni-bayreuth.de/"
+                class="partner"
+            >
+                <img class="partner-img" src={uba} alt="Uni Bayreuth" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.uni-siegen.de/"
+                class="partner"
+            >
+                <img class="partner-img" src={unsi} alt="Uni Siegen" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://uni-tuebingen.de/"
+                class="partner"
+            >
+                <img class="partner-img" src={ut} alt="Uni Tübingen" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.tugraz.at"
+                class="partner"
+            >
+                <img class="partner-img" src={tug} alt="TU Graz" />
+            </a>
+        </div>
     </div>
 </section>
 
@@ -131,7 +234,7 @@
     }
     #hero::before {
         --width: calc(100vh * 1980 / 900);
-        background-image: url("/assets/opener_transparent.png");
+        background-image: url("/assets/2025/opener_transparent.png");
         background-position: 0 0;
         background-size: var(--width) 100vh;
         background-repeat: repeat-x;
@@ -190,6 +293,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
     }
     .partner {
         display: block;

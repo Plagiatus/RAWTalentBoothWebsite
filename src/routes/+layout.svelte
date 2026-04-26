@@ -125,11 +125,17 @@
 		min-height: 100vh;
 	}
 	:global(.container) {
-		max-width: min(var(--max), calc(100vw - 4rem));
+		width: min(var(--max), calc(100vw - 4rem));
 		margin: 0 auto;
 		padding: 0 2rem;
 	}
 	:global(.highlight) {
 		color: var(--color-text-highlight) !important;
 	}
+    @media screen and (max-width: 628px) {
+        :global(.container) {
+            width: unset;
+			padding: 0 1.5rem;
+        }
+    }
 </style>

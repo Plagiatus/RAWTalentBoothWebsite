@@ -72,7 +72,7 @@
             </a>
         </div>
         <span class="afterline">Institutional Sponsors</span>
-        <div class="partner-wrapper">
+        <div class="partner-wrapper sponsors">
             <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -95,7 +95,7 @@
             </a>
         </div>
         <span class="afterline">Participating Universities</span>
-        <div class="partner-wrapper">
+        <div class="partner-wrapper universities">
             <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -231,6 +231,8 @@
         min-height: 100vh;
         padding: 5rem 0;
         font-family: var(--font-display);
+        display: grid;
+        place-items: center center;
     }
     #hero::before {
         --width: calc(100vh * 1980 / 900);
@@ -264,10 +266,11 @@
     .hero-sub > span {
         color: var(--color-text-muted);
         display: block;
-        font-size: 1.75rem;
+        font-size: clamp(1.25rem, 4vw, 1.75rem);
     }
     .hero-highlights {
         display: flex;
+        flex-wrap: wrap;
     }
     .hero-highlight {
         display: flex;
@@ -279,41 +282,47 @@
     .hero-highlight-info {
         color: var(--color-text-muted);
         text-transform: uppercase;
-        font-size: 0.75rem;
+        font-size: clamp(0.5rem, 1.5vw, 0.75rem);
         letter-spacing: 0.15rem;
     }
     .hero-highlight-value {
         color: var(--color-text-white);
-        font-size: 1.5rem;
+        font-size: clamp(0.75rem, 3vw, 1.5rem);
         font-weight: bold;
     }
 
     .partner-wrapper {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
+        display: grid;
+        --grid-width: 1;
+        grid-template-columns: repeat(var(--grid-width), 1fr);
+    }
+    .sponsors {
+        --grid-width: 2;
+    }
+    .universities {
+        --grid-width: 4;
     }
     .partner {
-        display: block;
         border: 1px solid var(--color-blueprint-grid-strong);
         padding: 2.75rem 2rem;
         background-color: var(--color-background-higher);
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         color: var(--color-text-muted);
         text-decoration: none;
         font-family: var(--font-display);
         text-transform: uppercase;
     }
     .partner-img {
-        height: 5rem;
+        max-height: 5rem;
     }
     .partner-name {
         margin-top: 1rem;
         letter-spacing: 0.1em;
+        font-size: clamp(0.5rem, 2.5vw, 1rem);
+        text-align: center;
     }
 
     .about-highlights {
@@ -330,7 +339,7 @@
     }
     .about-value {
         color: var(--color-text-white);
-        font-size: 1.75rem;
+        font-size: clamp(0.75rem, 3vw, 1.75rem);
         font-weight: 700;
     }
     .about-label {
@@ -338,7 +347,11 @@
         color: var(--color-text-muted);
         font-weight: 500;
         letter-spacing: 0.12em;
-        font-size: 0.7rem;
+        font-size: clamp(0.5rem, 1.5vw, 0.75rem);
+    }
+
+    #about p {
+        font-size: clamp(0.75rem, 1.5vw, 1rem);
     }
 
     section {
@@ -351,7 +364,7 @@
     }
     .overline {
         font-family: var(--font-display);
-        font-size: 0.7rem;
+        font-size: clamp(0.4rem, 1.75vw, 0.7rem);
         font-weight: 400;
         letter-spacing: 0.22em;
         text-transform: uppercase;
@@ -371,7 +384,7 @@
 
     h2 {
         font-family: var(--font-display);
-        font-size: clamp(2.4rem, 5vw, 4.2rem);
+        font-size: clamp(2.0rem, 5vw, 4.2rem);
         font-weight: 600;
         line-height: 1;
         text-transform: uppercase;
@@ -403,5 +416,31 @@
         display: grid;
         gap: 3rem;
         grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .split {
+            grid-template-columns: 1fr;
+        }
+        .universities {
+            --grid-width: 3;
+        }
+        .partner {
+            padding: 2rem 1.5rem;
+        }
+        section {
+            padding: 4rem 0;
+        }
+    }
+    @media screen and (max-width: 628px) {
+        .hero-highlight {
+            padding: 0.5rem 0.75rem;
+        }
+        .universities {
+            --grid-width: 2;
+        }
+        .partner {
+            padding: 1rem 0.75rem;
+        }
     }
 </style>

@@ -52,11 +52,17 @@
 <style>
 	@font-face {
 		font-family: "Oswald";
-		src: url("/fonts/Oswald.ttf");
+		src:
+			url("/fonts/Oswald.woff2") format("woff2"),
+			url("/fonts/Oswald.ttf") format("woff"),
+			url("/fonts/Oswald.ttf") format("ttf");
 	}
 	@font-face {
 		font-family: "DM Sans";
-		src: url("/fonts/DMSans.ttf");
+		src:
+			url("/fonts/DMSans.woff2") format("woff2"),
+			url("/fonts/DMSans.woff") format("woff"),
+			url("/fonts/DMSans.ttf") format("ttf");
 	}
 
 	:root {
@@ -75,7 +81,7 @@
 		--color-text-highlight: var(--highlight);
 
 		--color-background: #081020;
-		--color-background-higher: #0D1A2E;
+		--color-background-higher: #0d1a2e;
 
 		--max: 1280px;
 		scroll-behavior: smooth;

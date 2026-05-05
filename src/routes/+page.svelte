@@ -3,6 +3,8 @@
     import dgsw from "$lib/assets/logos/dgsw_logo.svg";
     import mfgbw from "$lib/assets/logos/mfgbw_logo.svg";
     import fs from "$lib/assets/logos/fs_logo.png";
+    
+    import ubav from "$lib/assets/logos/unis/uni_bayreuth_verein.svg";
 
     import hdm from "$lib/assets/logos/unis/hdm_stuttgart.svg";
     import hda from "$lib/assets/logos/unis/hs_darmstadt.svg";
@@ -92,6 +94,15 @@
             >
                 <img class="partner-img" src={fs} alt="FS Logo" />
                 <span class="partner-name">Film- und Medienstiftung NRW</span>
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.univerein.uni-bayreuth.de/de/index.html"
+                class="partner"
+            >
+                <img class="partner-img" src={ubav} alt="FS Logo" />
+                <span class="partner-name">Universitätsverein Bayreuth</span>
             </a>
         </div>
         <span class="afterline">Participating Universities</span>

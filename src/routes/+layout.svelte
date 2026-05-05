@@ -21,7 +21,7 @@
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://rawtalentbooth.com/" />
-	<meta property="og:title" content="RAW Talent @ gamescom 2025" />
+	<meta property="og:title" content="RAW Talent @ gamescom 2026" />
 	<meta
 		property="og:description"
 		content="RAW Talent brings together >200 students from 18 universities to showcase the talents of the next generation of game devs at gamescom 2026."

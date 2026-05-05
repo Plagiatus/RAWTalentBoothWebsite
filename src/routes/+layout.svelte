@@ -9,7 +9,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>RAW Talent @ gamescom 2025</title>
+	<title>RAW Talent @ gamescom 2026</title>
 
 	<!-- Primary Meta Tags -->
 	<meta name="title" content="RAW Talent @ gamescom 2026" />

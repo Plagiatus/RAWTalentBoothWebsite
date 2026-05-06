@@ -7,6 +7,7 @@
     import ubav from "$lib/assets/logos/unis/uni_bayreuth_verein.svg";
 
     import hdm from "$lib/assets/logos/unis/hdm_stuttgart.svg";
+    import hhn from "$lib/assets/logos/unis/hhn_heilbronn.svg";
     import hda from "$lib/assets/logos/unis/hs_darmstadt.svg";
     import hfu from "$lib/assets/logos/unis/hs_furtwangen.svg";
     import hsmw from "$lib/assets/logos/unis/hs_mittweida.svg";
@@ -114,6 +115,14 @@
                 class="partner"
             >
                 <img class="partner-img" src={hdm} alt="Hochschule der Medien Stuttgart" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.hs-heilbronn.de/"
+                class="partner"
+            >
+                <img class="partner-img" src={hhn} alt="Hochschule Heilbronn" />
             </a>
             <a
                 target="_blank"

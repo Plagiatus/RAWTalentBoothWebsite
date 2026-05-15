@@ -14,6 +14,8 @@
     import hsmw from "$lib/assets/logos/unis/hs_mittweida.svg";
     import hsnu from "$lib/assets/logos/unis/hs_neu_ulm.png";
     import htw from "$lib/assets/logos/unis/htw_berlin.svg";
+    import tha from "$lib/assets/logos/unis/th_augsburg.svg";
+    import tud from "$lib/assets/logos/unis/tu_darmstadt.svg";
     import tum from "$lib/assets/logos/unis/tu_münchen.svg";
     import uba from "$lib/assets/logos/unis/uni_bayreuth.svg";
     import unsi from "$lib/assets/logos/unis/uni_siegen.svg";
@@ -172,6 +174,22 @@
                 class="partner"
             >
                 <img class="partner-img" src={htw} alt="HTW Berlin" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.tha.de/"
+                class="partner"
+            >
+                <img class="partner-img" src={tha} alt="TH Augsburg" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.tu-darmstadt.de/"
+                class="partner"
+            >
+                <img class="partner-img" src={tud} alt="TU Darmstadt" />
             </a>
             <a
                 target="_blank"

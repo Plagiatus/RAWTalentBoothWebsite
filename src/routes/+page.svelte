@@ -7,6 +7,8 @@
     import ubav from "$lib/assets/logos/unis/uni_bayreuth_verein.svg";
 
     import cgl from "$lib/assets/logos/unis/cgl_th_koeln.svg";
+    import eth from "$lib/assets/logos/unis/eth_zuerich.svg";
+    import fabw from "$lib/assets/logos/unis/fabw.svg";
     import hdm from "$lib/assets/logos/unis/hdm_stuttgart.svg";
     import hhn from "$lib/assets/logos/unis/hhn_heilbronn.svg";
     import hda from "$lib/assets/logos/unis/hs_darmstadt.svg";
@@ -117,6 +119,22 @@
                 class="partner"
             >
                 <img class="partner-img" src={cgl} alt="Cologne Game Lab, TH Köln" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://gtc.inf.ethz.ch/"
+                class="partner"
+            >
+                <img class="partner-img" src={eth} alt="ETH Zürich" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.filmakademie.de/"
+                class="partner"
+            >
+                <img class="partner-img" src={fabw} alt="Filmakademie Baden-Württemberg" />
             </a>
             <a
                 target="_blank"

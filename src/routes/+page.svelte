@@ -15,9 +15,11 @@
     import hfu from "$lib/assets/logos/unis/hs_furtwangen.svg";
     import hsmw from "$lib/assets/logos/unis/hs_mittweida.svg";
     import hsnu from "$lib/assets/logos/unis/hs_neu_ulm.png";
+    import nord from "$lib/assets/logos/unis/nord_uni.svg";
     import tha from "$lib/assets/logos/unis/th_augsburg.svg";
     import tud from "$lib/assets/logos/unis/tu_darmstadt.svg";
     import tum from "$lib/assets/logos/unis/tu_münchen.svg";
+    import ru from "$lib/assets/logos/unis/ru.png";
     import uba from "$lib/assets/logos/unis/uni_bayreuth.svg";
     import unsi from "$lib/assets/logos/unis/uni_siegen.svg";
     import ut from "$lib/assets/logos/unis/uni_tuebingen.svg";
@@ -183,6 +185,22 @@
                 class="partner"
             >
                 <img class="partner-img" src={hsnu} alt="Hochschule Neu-Ulm" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://nord.no/"
+                class="partner"
+            >
+                <img class="partner-img" src={nord} alt="Nord Universitet" />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.ru.is/"
+                class="partner"
+            >
+                <img class="partner-img" src={ru} alt="Reykjavik University" />
             </a>
             <a
                 target="_blank"

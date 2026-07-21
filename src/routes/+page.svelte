@@ -25,7 +25,10 @@
     import unsi from "$lib/assets/logos/unis/uni_siegen.svg";
     import ut from "$lib/assets/logos/unis/uni_tuebingen.svg";
     import tug from "$lib/assets/logos/unis/tu_graz.svg";
+    
+    import GamesOnFrontpage from "$lib/cmp/games/GamesOnFrontpage.svelte";
 
+    let {data} = $props();
 </script>
 
 <section id="hero" class="hero">
@@ -55,6 +58,10 @@
             </div>
         </div>
     </div>
+</section>
+
+<section id="games">
+    <GamesOnFrontpage event={data.event} games={data.games} />
 </section>
 
 <section id="partners" class="partners">

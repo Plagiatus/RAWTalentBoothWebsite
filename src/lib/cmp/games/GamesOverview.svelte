@@ -71,7 +71,7 @@
         newTag = "";
         updateFilteredGames();
     }
-    function removeTag(tag: string){
+    function removeTag(tag: string) {
         let index = gameFilter.tags.indexOf(tag);
         if (index < 0) return;
         gameFilter.tags.splice(index, 1);
@@ -99,7 +99,13 @@
         {/each}
     </select>
     {#each gameFilter.tags as tag}
-        <button type="button" onclick={()=>{removeTag(tag)}} class="tag">{tag}</button>
+        <button
+            type="button"
+            onclick={() => {
+                removeTag(tag);
+            }}
+            class="tag">{tag}</button
+        >
     {/each}
     <label for="university">University</label>
     <select
@@ -128,14 +134,14 @@
 
 <div class="games">
     {#each filteredGames as game}
-        <div class="game">
+        <a href={"/" + game.event + "/game/" + game.id} class="game">
             <img
                 src={"https://static.rawtalentbooth.com/" + game.images.capsule}
                 alt={game.name}
                 class="game-image"
             />
             {game.name}
-        </div>
+        </a>
     {/each}
 </div>
 

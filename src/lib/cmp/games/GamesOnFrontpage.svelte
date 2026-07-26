@@ -27,7 +27,6 @@
             returnGames.push({ tag, games });
         }
 
-        console.log(returnGames);
         return returnGames;
     }
 </script>
@@ -37,7 +36,6 @@
         <span class="game-section-tag">#{games.tag}</span>
         <div class="game-section-games">
             {#each games.games as game}
-            {$inspect(game.name), $inspect(game.images.capsule)}
             <a href={`/${event.id}/game/${game.id}`} class="game-section-game">
                     <img
                         src={`https://static.rawtalentbooth.com/${game.images.capsule}`}

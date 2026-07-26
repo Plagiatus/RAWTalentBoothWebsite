@@ -1,7 +1,6 @@
 <script lang="ts">
     import GamesOverview from "$lib/cmp/games/GamesOverview.svelte";
-    let {games} = $props();
-    console.log(games);
+    let {data} = $props();
 </script>
 
 <h1>[eventId]</h1>
@@ -9,7 +8,7 @@
 <!-- Event Stats -->
 
 <h2>Games</h2>
-<GamesOverview games={games}/>
+<GamesOverview games={data.games}/>
 
 <h2>Memories</h2>
 <!-- <Gallery></Gallery> -->

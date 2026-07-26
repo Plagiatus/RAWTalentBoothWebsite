@@ -121,6 +121,7 @@
 		z-index: -1;
 	}
 	main {
+		padding-top: 4rem;
 		padding-bottom: var(--spacing-12);
 		min-height: 100vh;
 	}

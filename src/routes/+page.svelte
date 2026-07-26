@@ -323,6 +323,7 @@
         font-family: var(--font-display);
         display: grid;
         place-items: center center;
+        margin-top: -4rem;
     }
     #hero::before {
         --width: calc(100vh * 1980 / 900);

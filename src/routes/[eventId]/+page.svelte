@@ -3,7 +3,7 @@
     let {data} = $props();
 </script>
 
-<h1>[eventId]</h1>
+<h1>{data.event.name} {data.event.year}</h1>
 
 <!-- Event Stats -->
 

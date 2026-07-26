@@ -21,7 +21,7 @@ type RTGame = {
     },
 }
 
-
+// TODO: add more infos to the event, like universities, games, images, etc.
 type RTEvent = {
     id: string,
     name: string,

@@ -36,9 +36,9 @@
         <span class="game-section-tag">#{games.tag}</span>
         <div class="game-section-games">
             {#each games.games as game}
-            <a href={`/${event.id}/game/${game.id}`} class="game-section-game">
+            <a href={"/" + event.id + "/game/" + game.id} class="game-section-game">
                     <img
-                        src={`https://static.rawtalentbooth.com/${game.images.capsule}`}
+                        src={"https://static.rawtalentbooth.com/" + game.images.capsule}
                         alt={game.name + " image"}
                         class="game-section-game-capsule"
                     />

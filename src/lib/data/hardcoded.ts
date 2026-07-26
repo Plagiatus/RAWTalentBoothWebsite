@@ -92,3 +92,12 @@ export const universities: University[] = [
         name: "TU Graz",
     },
 ]
+
+export const tags: Map<string, string[]> = new Map<string, string[]>([
+    ["Player Amount", ["singleplayer", "multiplayer"]],
+    ["Platforms", ["steam", "itch", "mobile", "epic"]],
+    ["Monetization", ["free2play", "pay2play", "demo"]],
+    ["Gameplay", ["co-op", "competitve", "casual/party"]],
+    ["Category", ["shooter", "platform", "simulation", "strategy", "roguelike", "puzzle", "rpg", "romance", "story driven", "gambling", "incremental", "metroidvania", "cozy"]],
+    ["Style", ["horror", "pixel", "fantasy", "sci-fi", "realistic", "cartoon"]],
+])

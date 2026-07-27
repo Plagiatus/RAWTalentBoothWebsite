@@ -20,7 +20,7 @@
         </a>
         <ul class="nav-links">
             <li><a href="/#partners">Partners</a></li>
-            <li><a href="/#about">About</a></li>
+            <li><a href="/aboutus">About Us</a></li>
             <li><a href="/2025" data-sveltekit-preload-data="off">2025</a></li>
         </ul>
     </nav>

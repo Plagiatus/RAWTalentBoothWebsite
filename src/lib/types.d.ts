@@ -31,5 +31,21 @@ type RTEvent = {
 type University = {
     id: string,
     name: string,
+    img: string,
     url: string,
+}
+
+type Sponsor = {
+    id: string,
+    name: string,
+    img: string,
+    url: string,
+}
+
+type VIP = {
+    name: string,
+    position: string,
+    status: boolean,
+    atRawtalent: number,
+    img: string,
 }

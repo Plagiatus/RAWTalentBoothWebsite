@@ -1,3 +1,5 @@
+export const STATIC_FILE_PATH = "https://static.rawtalentbooth.com/"
+
 export function delay(ms: number): Promise<void> {
     return new Promise<void>((resolve, reject) => {
         setTimeout(resolve, ms);

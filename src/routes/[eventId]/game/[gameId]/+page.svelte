@@ -3,6 +3,7 @@
     import { STATIC_FILE_PATH } from "$lib/utils.js";
     import usk12 from "$lib/assets/usk/12j.png";
     import usk18 from "$lib/assets/usk/18j.png";
+    import youtube from "$lib/assets/logos/yt_icon.png";
 
     let { data } = $props();
     let game = $derived(data.game);
@@ -30,6 +31,7 @@
             link.startsWith("https://youtu.be/")
         )
             return ["youtube"];
+        if (link.startsWith("https://instagram.com")) return ["instagram"];
         return ["website"];
     }
 
@@ -55,7 +57,25 @@
                     <img src={uskImg} alt="USK 12" class="usk-img" />
                 {/if}
             </div>
+            {#if game.trailer}
+                <a
+                    class="trailer"
+                    href={game.trailer}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Watch Trailer on YouTube
+                    <img src={youtube} alt="" class="yt-icon" />
+                </a>
+            {/if}
+
             <p class="description">{game.shortDescription}</p>
+
+            {#if game.aiUsed}
+                <div id="ai-disclosure">
+                    Generative AI was used in the creation of this game.
+                </div>
+            {/if}
         </div>
         <div class="game-section" style="grid-area: info-2; order: 1;">
             <div class="grid">
@@ -120,11 +140,6 @@
             </div>
         {/if}
     </div>
-    {#if game.aiUsed}
-        <div id="ai-disclosure">
-            Generative AI was used in the creation of this game.
-        </div>
-    {/if}
 </section>
 
 <section class="container">
@@ -176,6 +191,17 @@
 
     .game-img-wrapper {
         position: relative;
+        margin: 2em 0;
+    }
+    .trailer {
+        margin-bottom: 2em;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .trailer > .yt-icon {
+        height: 3em;
     }
     .usk-img {
         position: absolute;
@@ -184,11 +210,13 @@
         height: 4em;
     }
 
-    #ai-disclosure,
+    #ai-disclosure {
+        text-align: right;
+        color: var(--color-text-subtle);
+    }
+
     #see-all {
         padding: 1em;
-    }
-    #see-all {
         display: block;
         text-align: center;
         background-color: var(--color-background-higher);

@@ -3,8 +3,7 @@
     import { STATIC_FILE_PATH } from "$lib/utils.js";
     import usk12 from "$lib/assets/usk/12j.png";
     import usk18 from "$lib/assets/usk/18j.png";
-    import youtube from "$lib/assets/logos/yt_icon.png";
-
+    import Icon from "$lib/icons/Icon.svelte";
     let { data } = $props();
     let game = $derived(data.game);
     const firstGameLink = findFirstGameLink();
@@ -20,19 +19,19 @@
         return "";
     }
 
-    function getLinkClasses(link: string): string[] {
+    function getLinkType(link: string): string {
         let store: string = getLinkStore(link);
         if (store) {
-            return [store, "store"];
+            return store;
         }
-        if (link.startsWith("https://linktr.ee")) return ["linktree"];
+        if (link.startsWith("https://linktr.ee")) return "linktree";
         if (
             link.startsWith("https://youtube.com") ||
             link.startsWith("https://youtu.be/")
         )
-            return ["youtube"];
-        if (link.startsWith("https://instagram.com")) return ["instagram"];
-        return ["website"];
+            return "youtube";
+        if (link.startsWith("https://instagram.com")) return "instagram";
+        return "";
     }
 
     function getLinkStore(link: string): string {
@@ -65,7 +64,7 @@
                     rel="noopener noreferrer"
                 >
                     Watch Trailer on YouTube
-                    <img src={youtube} alt="" class="yt-icon" />
+                    <Icon icon="youtube" />
                 </a>
             {/if}
 
@@ -118,9 +117,9 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 title={link}
-                                class={[...getLinkClasses(link), "link-button"]}
+                                class="link-button"
                             >
-                                Icon
+                                <Icon icon={getLinkType(link)}/>
                             </a>
                         {/each}
                     </div>
@@ -134,9 +133,11 @@
                     href={firstGameLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class={[...getLinkClasses(firstGameLink), "play-button"]}
-                    >Play Now</a
+                    class={["play-button"]}
                 >
+                <Icon icon={getLinkType(firstGameLink)}/>
+                    Play Now
+                </a>
             </div>
         {/if}
     </div>
@@ -167,12 +168,12 @@
     }
     .game-section {
         padding: 1em;
-        background-color: var(--color-background);
+        background-color: var(--color-background-higher);
         border: 1px solid var(--color-blueprint-grid-strong);
     }
     .grid {
         display: grid;
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 7.5em 1fr;
         gap: 1em;
     }
     .grid > *:nth-child(odd) {
@@ -199,9 +200,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-    }
-    .trailer > .yt-icon {
-        height: 3em;
+        gap: 1em;
     }
     .usk-img {
         position: absolute;
@@ -215,14 +214,6 @@
         color: var(--color-text-subtle);
     }
 
-    #see-all {
-        padding: 1em;
-        display: block;
-        text-align: center;
-        background-color: var(--color-background-higher);
-        color: var(--color-text-white);
-    }
-
     a {
         color: inherit;
         color: var(--color-text-highlight);
@@ -232,14 +223,23 @@
     #see-all,
     .play-button {
         background-color: var(--highlight);
-        color: var(--color-text-white);
-        display: block;
+        color: var(--color-background);
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 1em;
         text-align: center;
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        font-weight: 500;
+        gap: 1em;
     }
 
     section {
         margin-top: 4rem;
+    }
+    section:last-of-type {
+        margin-bottom: 4rem;
     }
 
     @media screen and (max-width: 1024px) {

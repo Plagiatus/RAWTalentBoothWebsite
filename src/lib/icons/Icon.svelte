@@ -1,8 +1,9 @@
 <script lang="ts">
-    import { LucideGlobe } from "@lucide/svelte";
+    import { LucideGlobe, LucideLinkedin } from "@lucide/svelte";
     import { icons } from "./icons";
 
-    let { icon, fill = "currentColor" }: { icon: string; fill?: string } = $props();
+    let { icon, fill = "currentColor" }: { icon: string; fill?: string } =
+        $props();
 
     let siIcon = $derived(icons[icon]);
 </script>
@@ -18,6 +19,8 @@
     >
         <path d={siIcon.path}></path>
     </svg>
+{:else if icon == "linkedin"}
+    <LucideLinkedin />
 {:else}
     <LucideGlobe />
 {/if}

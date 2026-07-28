@@ -1,4 +1,4 @@
-import { siAppstore, siGoogleplay, siInstagram, siItchdotio, siLinktree, siSteam, siYoutube, type SimpleIcon } from "simple-icons";
+import { siAppstore, siGoogleplay, siInstagram, siItchdotio, siLinktree, siSteam, siTiktok, siYoutube, type SimpleIcon } from "simple-icons";
 
 
 export const icons: {[key: string]: SimpleIcon} = {
@@ -9,4 +9,5 @@ export const icons: {[key: string]: SimpleIcon} = {
     "itch": siItchdotio,
     "google": siGoogleplay,
     "apple": siAppstore,
+    "tiktok": siTiktok,
 }

@@ -2,6 +2,7 @@
     import type { RTGame } from "../../types";
     import { tags, universities } from "$lib/data/hardcoded";
     import Game from "../Game.svelte";
+    import { STATIC_FILE_PATH } from "$lib/utils";
 
     let { games }: { games: RTGame[] } = $props();
 
@@ -136,7 +137,7 @@
     {#each filteredGames as game}
         <a href={"/" + game.event + "/game/" + game.id} class="game">
             <img
-                src={"https://static.rawtalentbooth.com/" + game.images.capsule}
+                src={STATIC_FILE_PATH + game.images.capsule}
                 alt={game.name}
                 class="game-image"
             />

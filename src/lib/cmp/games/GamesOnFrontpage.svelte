@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { RTEvent, RTGame } from "$lib/types";
-    import { shuffle } from "$lib/utils";
+    import { shuffle, STATIC_FILE_PATH } from "$lib/utils";
 
     let { games = [], event }: { games: RTGame[], event: RTEvent } = $props();
     let gamesToDisplay: { tag: string; games: RTGame[] }[] = $derived(chooseRandomGames(games));
@@ -38,7 +38,7 @@
             {#each games.games as game}
             <a href={"/" + event.id + "/game/" + game.id} class="game-section-game">
                     <img
-                        src={"https://static.rawtalentbooth.com/" + game.images.capsule}
+                        src={STATIC_FILE_PATH + game.images.capsule}
                         alt={game.name + " image"}
                         class="game-section-game-capsule"
                     />

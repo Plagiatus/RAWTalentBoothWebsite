@@ -3,7 +3,8 @@
     import type { RTGame } from "$lib/types";
     import { STATIC_FILE_PATH } from "$lib/utils";
 
-    let { game }: { game: RTGame } = $props();
+    let { game, maxTags = Infinity }: { game: RTGame; maxTags?: number } =
+        $props();
     let uni = $derived(universities.find((uni) => game.university == uni.id));
 </script>
 
@@ -19,9 +20,14 @@
             <span class="game-uni">{uni.name}</span>
         {/if}
         <div class="game-tags">
-            {#each game.tags as tag}
-                <span class="game-tag">#{tag}</span>
+            {#each game.tags as tag, i}
+                {#if i < maxTags}
+                    <span class="game-tag">#{tag}</span>
+                {/if}
             {/each}
+            {#if maxTags < game.tags.length}
+                <span class="game-tag">...</span>
+            {/if}
         </div>
     </div>
 </a>
@@ -47,6 +53,7 @@
     .game-name {
         font-size: 1.25rem;
         color: var(--highlight);
+        font-family: var(--font-display);
     }
     .game-uni {
         color: var(--color-text-white);
@@ -62,7 +69,7 @@
         font-size: smaller;
         color: var(--color-text-muted);
     }
-    
+
     a {
         text-decoration: none;
         color: var(--text-color);

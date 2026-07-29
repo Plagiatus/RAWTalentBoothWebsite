@@ -3,6 +3,7 @@
     import logo from "$lib/assets/logos/RAWTalentLogo.svg";
     import { slide } from "svelte/transition";
     let y: number = $state(0);
+    let frontpage: boolean = $derived(page.route.id == "/");
     // this is a hack, might want to find a better way to do this.
     let archive: number = $derived(parseInt(page.route.id?.substring(1) ?? ""));
     let mobileExpanded: boolean = $state(false);
@@ -10,7 +11,7 @@
 
 <svelte:window bind:scrollY={y} />
 
-<header class:unscrolled={y < 60}>
+<header class:unscrolled={y < 60 && frontpage}>
     <nav class="header-nav desktop">
         <a href="/">
             <img src={logo} alt="RAW Talent" class="header-img" />

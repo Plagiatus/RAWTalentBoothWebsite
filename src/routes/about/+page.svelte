@@ -311,4 +311,59 @@
     .section {
         margin-bottom: 6rem;
     }
+
+    /* Mobile Part */
+
+    @media screen and (max-width: 900px) {
+        .vip {
+        --grid-width: 2;
+        }
+    }
+    @media screen and (max-width: 760px) {
+    .grid-description {
+        grid-template-columns: 1fr;
+    }
+    .description-image {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .sponsors {
+        --grid-width: 2; 
+    }
+    .sponsors  .partner:last-child:nth-child(odd){
+        grid-column: 1 / -1;
+    }
+    .vip {
+        --grid-width: 2;
+        gap: 0rem;
+    }
+    .universities {
+        --grid-width: 3;
+    }
+    .universities  .partner:last-child:nth-child(odd){
+        grid-column: 1 / -1;
+    }
+}
+@media screen and (max-width: 460px) {
+    .grid-description {
+        grid-template-columns: 1fr;
+    }
+    .description-image {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .sponsors{
+        --grid-width: 1; 
+    }
+    .vip {
+        --grid-width: 1;
+        gap: 2rem;
+    }
+    .universities {
+        --grid-width: 2;
+    }
+}
+
 </style>

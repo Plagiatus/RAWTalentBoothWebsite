@@ -3,7 +3,7 @@
     import dgsw from "$lib/assets/logos/dgsw_logo.svg";
     import mfgbw from "$lib/assets/logos/mfgbw_logo.svg";
     import fs from "$lib/assets/logos/fs_logo.png";
-    
+
     import ubav from "$lib/assets/logos/unis/uni_bayreuth_verein.svg";
 
     import cgl from "$lib/assets/logos/unis/cgl_th_koeln.svg";
@@ -25,10 +25,10 @@
     import unsi from "$lib/assets/logos/unis/uni_siegen.svg";
     import ut from "$lib/assets/logos/unis/uni_tuebingen.svg";
     import tug from "$lib/assets/logos/unis/tu_graz.svg";
-    
+
     import GamesOnFrontpage from "$lib/cmp/games/GamesOnFrontpage.svelte";
 
-    let {data} = $props();
+    let { data } = $props();
 </script>
 
 <section id="hero" class="hero">
@@ -61,7 +61,15 @@
 </section>
 
 <section id="games">
-    <GamesOnFrontpage event={data.event} games={data.games} />
+    <div class="container">
+        <h2>This Years <span class="highlight">Games</span></h2>
+        <span
+            >A random selection from the <span class="highlight"
+                >{data.games.length} games</span
+            > we're exhibiting this year</span
+        >
+        <GamesOnFrontpage event={data.event} games={data.games} />
+    </div>
 </section>
 
 <section id="partners" class="partners">
@@ -475,7 +483,7 @@
 
     h2 {
         font-family: var(--font-display);
-        font-size: clamp(2.0rem, 5vw, 4.2rem);
+        font-size: clamp(2rem, 5vw, 4.2rem);
         font-weight: 600;
         line-height: 1;
         text-transform: uppercase;

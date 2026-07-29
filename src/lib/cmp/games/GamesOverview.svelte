@@ -1,8 +1,7 @@
 <script lang="ts">
     import type { RTGame } from "../../types";
     import { tags, universities } from "$lib/data/hardcoded";
-    import Game from "../Game.svelte";
-    import { STATIC_FILE_PATH } from "$lib/utils";
+    import GameCapsule from "./GameCapsule.svelte";
 
     let { games }: { games: RTGame[] } = $props();
 
@@ -135,14 +134,7 @@
 
 <div class="games">
     {#each filteredGames as game}
-        <a href={"/" + game.event + "/game/" + game.id} class="game">
-            <img
-                src={STATIC_FILE_PATH + game.images.capsule}
-                alt={game.name}
-                class="game-image"
-            />
-            {game.name}
-        </a>
+        <GameCapsule {game} />
     {/each}
 </div>
 
@@ -151,10 +143,5 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-    }
-
-    .game-image {
-        width: 400px;
-        height: 300px;
     }
 </style>

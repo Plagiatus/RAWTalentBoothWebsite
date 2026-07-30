@@ -79,12 +79,14 @@
 
 		--highlight: #3cb8ff;
 		--color-text-highlight: var(--highlight);
+		--color-text-on-highlight: var(--color-background);
 
 		--color-background: #081020;
 		--color-background-higher: #0d1a2e;
 
 		--max: 1280px;
 		scroll-behavior: smooth;
+		scrollbar-color: var(--highlight) var(--color-text-on-highlight);
 	}
 	:global(body) {
 		font-family: var(--font-body);

@@ -19,6 +19,7 @@
         return "";
     }
 
+    // TODO: these should probably be rewritten to just extract the domain name. 🤷‍♂️
     function getLinkType(link: string): string {
         let store: string = getLinkStore(link);
         if (store) {
@@ -31,6 +32,11 @@
         )
             return "youtube";
         if (link.startsWith("https://instagram.com")) return "instagram";
+        if (
+            link.startsWith("https://www.linkedin.com") ||
+            link.startsWith("https://linkedin.com")
+        )
+            return "linkedin";
         return "";
     }
 
@@ -42,6 +48,10 @@
         return "";
     }
 </script>
+
+<svelte:head>
+    <title>{game.name} @ RawTalent</title>
+</svelte:head>
 
 <section class="container">
     <div id="game">
@@ -82,7 +92,7 @@
                     <span>Tags</span>
                     <div id="tags">
                         {#each game.tags as tag}
-                            <span class="tag">{tag}</span>
+                            <span class="tag">#{tag}</span>
                         {/each}
                     </div>
                 {/if}
@@ -119,7 +129,7 @@
                                 title={link}
                                 class="link-button"
                             >
-                                <Icon icon={getLinkType(link)}/>
+                                <Icon icon={getLinkType(link)} />
                             </a>
                         {/each}
                     </div>
@@ -135,7 +145,7 @@
                     rel="noopener noreferrer"
                     class={["play-button"]}
                 >
-                <Icon icon={getLinkType(firstGameLink)}/>
+                    <Icon icon={getLinkType(firstGameLink)} />
                     Play Now
                 </a>
             </div>
@@ -157,7 +167,7 @@
             "info-1 play-now"
             "info-1 info-3";
         grid-template-columns: 2fr 1fr;
-        grid-template-rows: 1fr auto 1fr;
+        grid-template-rows: 1fr auto auto;
         gap: 1em;
         color: var(--color-text-white);
     }
@@ -170,6 +180,7 @@
         padding: 1em;
         background-color: var(--color-background-higher);
         border: 1px solid var(--color-blueprint-grid-strong);
+        white-space: pre-line;
     }
     .grid {
         display: grid;
@@ -179,15 +190,15 @@
     .grid > *:nth-child(odd) {
         color: var(--color-text-muted);
     }
-    .span-grid {
-        grid-column-end: span 2;
-    }
 
     #tags,
     #links {
         display: flex;
         flex-wrap: wrap;
         gap: 1em;
+    }
+    #tags {
+        gap: 0 1em;
     }
 
     .game-img-wrapper {

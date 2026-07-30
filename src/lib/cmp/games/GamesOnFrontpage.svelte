@@ -49,7 +49,7 @@
             <h3 class="game-section-tag">#{games.tag}</h3>
             <div class="game-section-games" bind:this={overflowChecks[games.tag]}>
                 {#each games.games as game}
-                    <GameCapsule {game} />
+                    <GameCapsule {game} maxTags={3} />
                 {/each}
                 <a class="see-more" href={`/${event.id}?tag=${games.tag}`}
                     >See more <ArrowRight size="1.5em" />

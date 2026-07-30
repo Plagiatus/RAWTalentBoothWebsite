@@ -19,16 +19,19 @@
         {#if uni}
             <span class="game-uni">{uni.name}</span>
         {/if}
-        <div class="game-tags">
-            {#each game.tags as tag, i}
-                {#if i < maxTags}
-                    <span class="game-tag">#{tag}</span>
+
+        {#if maxTags > 0}
+            <div class="game-tags">
+                {#each game.tags as tag, i}
+                    {#if i < maxTags}
+                        <span class="game-tag">#{tag}</span>
+                    {/if}
+                {/each}
+                {#if maxTags < game.tags.length}
+                    <span class="game-tag">...</span>
                 {/if}
-            {/each}
-            {#if maxTags < game.tags.length}
-                <span class="game-tag">...</span>
-            {/if}
-        </div>
+            </div>
+        {/if}
     </div>
 </a>
 
@@ -62,12 +65,14 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 0 1em;
+        gap: 0.2em 0.5em;
     }
 
     .game-tag {
         font-size: smaller;
         color: var(--color-text-muted);
+        background-color: var(--color-background);
+        padding: 0 0.5em;
     }
 
     a {

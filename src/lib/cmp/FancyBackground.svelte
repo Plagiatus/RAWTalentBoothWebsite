@@ -1,4 +1,5 @@
 <script lang="ts">
+    // Adapted from https://codepen.io/kangiedanie/pen/jOZJBRz
     import type { RTGame } from "$lib/types";
     import { STATIC_FILE_PATH } from "$lib/utils";
 

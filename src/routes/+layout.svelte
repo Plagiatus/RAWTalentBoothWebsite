@@ -135,6 +135,9 @@
 	:global(.highlight) {
 		color: var(--color-text-highlight) !important;
 	}
+	:global(h1),:global(h2),:global(h3){
+		font-family: var(--font-display);
+	}
     @media screen and (max-width: 628px) {
         :global(.container) {
             width: unset;

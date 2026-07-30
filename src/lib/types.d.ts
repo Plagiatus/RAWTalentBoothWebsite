@@ -44,6 +44,7 @@ type Sponsor = {
 
 type VIP = {
     name: string,
+    roleAtRawtalent: string,
     position: string,
     status: boolean,
     atRawtalent: number,

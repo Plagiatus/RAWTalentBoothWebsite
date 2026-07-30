@@ -64,36 +64,42 @@ export const vips: VIP[] = [
         status: true,
         atRawtalent: 2,
         img: vipImage01,
+        roleAtRawtalent: "Role at RAW",
     }, {
         name: "John Doe",
         position: "Game Developer",
         status: true,
         atRawtalent: 5,
         img: vipImage01,
+        roleAtRawtalent: "Role at RAW",
     }, {
         name: "John Doe",
         position: "Game Developer",
         status: true,
         atRawtalent: 5,
         img: vipImage01,
+        roleAtRawtalent: "Role at RAW",
     }, {
         name: "John Doe",
         position: "Game Developer",
         status: true,
         atRawtalent: 5,
         img: vipImage01,
+        roleAtRawtalent: "Role at RAW",
     }, {
         name: "John Doe",
         position: "Game Developer",
         status: true,
         atRawtalent: 5,
         img: vipImage01,
+        roleAtRawtalent: "Role at RAW",
     }, {
         name: "John Doe",
         position: "Game Developer",
         status: true,
         atRawtalent: 5,
         img: vipImage01,
+        roleAtRawtalent: "Role at RAW",
     },
 ]
 

@@ -20,9 +20,10 @@
             {/if}
         </a>
         <ul class="nav-links">
-            <li><a href="/#partners">Partners</a></li>
             <li><a href="/about">About Us</a></li>
-            <li><a href="/2025" data-sveltekit-preload-data="off">2025</a></li>
+            <li><a href="/gamescom-2026">Games</a></li>
+            <!-- TODO: Add the archive here once we've got those ready. -->
+            <!-- Probably want to make a dropdown menu for that one -->
         </ul>
     </nav>
     <nav class="header-nav-mobile mobile">
@@ -46,10 +47,11 @@
             <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
             <ul class="nav-links" onclick={()=>{mobileExpanded = false}}>
                 <li><a href="/" transition:slide>Home</a></li>
-                <li><a href="/#partners" transition:slide>Partners</a></li>
-                <li><a href="/#about" transition:slide>About</a></li>
-                <hr class="spacer">
-                <li><a href="/2025" data-sveltekit-preload-data="off" transition:slide>2025</a></li>
+                <li><a href="/about" transition:slide>About Us</a></li>
+                <li><a href="/gamescom-2026" transition:slide>Games</a></li>
+                <!-- TODO: Add the archive here once we've got those ready. -->
+                <!-- <hr class="spacer"> -->
+                <!-- <li><a href="/2025" transition:slide>2025</a></li> -->
             </ul>
         </div>
     </nav>
@@ -115,6 +117,9 @@
     }
     .nav-links a:hover {
         color: var(--color-text-white);
+    }
+    .nav-links a {
+        border: 1px solid transparent;
     }
 
     #notice {
@@ -192,7 +197,8 @@
     @media screen and (min-width: 629px) {
         header.unscrolled .nav-links a {
             color: var(--color-text-white);
-            background-color: var(--color-background-higher);
+            background-color: var(--color-background);
+            border-color: var(--color-blueprint-grid-strong);
         }
     }
     @media screen and (max-width: 628px) {

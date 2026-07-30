@@ -89,7 +89,7 @@
     }
     function updateFilteredGames() {
         filteredGames = games.filter(filterGames);
-        shuffle(filteredGames);
+        // shuffle(filteredGames);
     }
 
     let newTag: string = $state("");
@@ -112,7 +112,7 @@
     }
 </script>
 
-<div id="game-filter">
+<div class="game-filter">
     <details bind:open={filterOpen}>
         <summary>
             <div class="filter-group">
@@ -220,7 +220,7 @@
 </div>
 
 <style>
-    #game-filter {
+    .game-filter {
         margin: 1rem 5vw;
         position: sticky;
         top: 5rem;
@@ -324,7 +324,7 @@
         text-align: center;
     }
     @media screen and (max-width: 628px) { /* Header changes here */
-        #game-filter {
+        .game-filter {
             top: 3rem;
         }
     }

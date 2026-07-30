@@ -205,6 +205,9 @@
         position: relative;
         margin: 2em 0;
     }
+    .game-img-wrapper {
+        aspect-ratio: 16 / 9;
+    }
     .trailer {
         margin-bottom: 2em;
         display: flex;

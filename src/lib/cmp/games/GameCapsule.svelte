@@ -42,10 +42,11 @@
         flex-grow: 0;
         flex-basis: 320px;
         background-color: var(--color-background-higher);
+        max-width: 100vw;
     }
     img.game-capsule {
-        width: 320px;
-        height: 240px;
+        aspect-ratio: 4 / 3;
+        max-width: 100%;
     }
     .game-info {
         padding: 1em;
@@ -57,6 +58,7 @@
         font-size: 1.25rem;
         color: var(--highlight);
         font-family: var(--font-display);
+        margin-bottom: 0.25rem;
     }
     .game-uni {
         color: var(--color-text-white);
@@ -66,8 +68,9 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0.2em 0.5em;
+        margin: 0.25rem 0;
     }
-
+    
     .game-tag {
         font-size: smaller;
         color: var(--color-text-muted);

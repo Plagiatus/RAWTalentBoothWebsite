@@ -14,11 +14,7 @@
     <div class="description-text">
         <h2>What is <span class="highlight">Raw Talent</span>?</h2>
         <p>
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+           Under the label RAW Talent game development students from various European universities come together and exhibit game projects created during their studies. Brought to life by Prof. Dr. Greta Hoffmann in 2024, RAW Talent gives students a chance  to gain a foothold in the games industry and build experience while simultaneously showcasing the future generation of game makers. Since 2024 RAW Talent has grown immensely, increasing from 3 to 18 universities and from 19 to over 90 projects.
         </p>
     </div>
 </section>
@@ -104,7 +100,7 @@
         Press Kit
     </a>
 </section>
-<section class="container contact-section">
+<!-- <section class="container contact-section">
     <h2 class="center contact-title">Contact <span class="highlight">Us</span>:</h2>
     
     <div class="contact-form">
@@ -127,7 +123,7 @@
             <button type="submit" class="submit-btn">Submit</button>
         </form>
     </div>
-</section>
+</section> -->
 
 <style>
     .grid-description {
@@ -157,7 +153,7 @@
     }
     .afterline {
         font-family: var(--font-display);
-        font-size: 0.7rem;
+        font-size: 0.85rem;
         font-weight: 400;
         letter-spacing: 0.22em;
         text-transform: uppercase;
@@ -215,6 +211,10 @@
     .universities {
         --grid-width: 5;
     }
+    .universities .partner:last-child:nth-child(5n + 1) { grid-column: span 5; }
+    .universities .partner:last-child:nth-child(5n + 2) { grid-column: span 4; }
+    .universities .partner:last-child:nth-child(5n + 3) { grid-column: span 3; }
+    .universities .partner:last-child:nth-child(5n + 4) { grid-column: span 2; }
     .partner-img {
         max-height: 5rem;
     }
@@ -292,33 +292,18 @@
         font-size: 1rem;
     }
     .press-kit {
-        border: 1px solid var(--color-text-white);
-        padding: 1rem 2rem;
-        background-color: var(--color-background-higher);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: var(--color-text-white);
-        text-decoration: none;
         font-family: var(--font-display);
-        text-transform: uppercase;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        max-width: 300px;
-        margin: 9vh auto;
-
-        transition: all 0.2s ease-in-out;
-
-    }
-    .press-kit:hover {
         background-color: var(--highlight);
-        color: var(--color-background);
+        color: var(--color-text-on-highlight);
+        padding: 1em;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 9vh auto;
     }
 
-    .contact-title {
+
+    <!-- .contact-title {
         margin-bottom: 3vh;
     }
     .contact-form {
@@ -381,7 +366,7 @@
     .submit-btn:hover {
         background-color: var(--highlight);
         color: var(--color-background);
-    }
+    } -->
     .section {
         margin-bottom: 6rem;
     }
@@ -394,58 +379,59 @@
         }
     }
     @media screen and (max-width: 760px) {
-    .grid-description {
-        grid-template-columns: 1fr;
+        .grid-description {
+            grid-template-columns: 1fr;
+        }
+        .description-image {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .sponsors {
+            --grid-width: 2; 
+        }
+        .sponsors  .partner:last-child:nth-child(odd){
+            grid-column: 1 / -1;
+        }
+        .vip-grid {
+            --grid-width: 2;
+            gap: 0rem;
+        }
+        .person-card::before,
+        .person-card::after {
+            display: none;
+        }
+        .universities {
+            --grid-width: 3;
+        }
+        .universities .partner:last-child:nth-child(3n + 1) { grid-column: span 3; }
+        .universities .partner:last-child:nth-child(3n + 2) { grid-column: span 2; }
     }
-    .description-image {
-        display: block;
-        margin: 0 auto;
-        width: 100%;
+    @media screen and (max-width: 460px) {
+        .grid-description {
+            grid-template-columns: 1fr;
+        }
+        .description-image {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .sponsors{
+            --grid-width: 1; 
+        }
+        .vip-grid {
+            --grid-width: 1;
+            gap: 2rem;
+        }
+        .person-card::before,
+        .person-card::after {
+            display: block;
+        }
+        .universities {
+            --grid-width: 2;
+        }
+        .universities .partner:last-child:nth-child(odd) { 
+            grid-column: span 2; 
+        }
     }
-    .sponsors {
-        --grid-width: 2; 
-    }
-    .sponsors  .partner:last-child:nth-child(odd){
-        grid-column: 1 / -1;
-    }
-    .vip-grid {
-        --grid-width: 2;
-        gap: 0rem;
-    }
-    .person-card::before,
-    .person-card::after {
-        display: none;
-    }
-    .universities {
-        --grid-width: 3;
-    }
-    .universities  .partner:last-child:nth-child(odd){
-        grid-column: 1 / -1;
-    }
-}
-@media screen and (max-width: 460px) {
-    .grid-description {
-        grid-template-columns: 1fr;
-    }
-    .description-image {
-        display: block;
-        margin: 0 auto;
-        width: 100%;
-    }
-    .sponsors{
-        --grid-width: 1; 
-    }
-    .vip-grid {
-        --grid-width: 1;
-        gap: 2rem;
-    }
-    .person-card::before,
-    .person-card::after {
-        display: block;
-    }
-    .universities {
-        --grid-width: 2;
-    }
-}
-
 </style>

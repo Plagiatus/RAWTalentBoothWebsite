@@ -80,9 +80,15 @@
 
             <p class="description">{game.shortDescription}</p>
 
-            {#if game.aiUsed}
-                <div id="ai-disclosure">
-                    Generative AI was used in the creation of this game.
+            {#if game.aiDisclaimer}
+                <div id="ai-disclosure-wrapper">
+                    Generative AI was used in the following capacity:
+                    <span id="ai-disclosure">
+                        {game.aiDisclaimer}
+                        {#if !game.aiDisclaimer.trim()}
+                            The game creator provided no further details
+                        {/if}
+                    </span>
                 </div>
             {/if}
         </div>
@@ -223,9 +229,15 @@
         height: 4em;
     }
 
+    #ai-disclosure-wrapper {
+        color: var(--color-text-muted);
+        margin-top: 2rem;
+    }
     #ai-disclosure {
-        text-align: right;
-        color: var(--color-text-subtle);
+        display: block;
+        padding-left: 1.5em;
+        white-space: pre-line;
+        font-style: italic;
     }
 
     a {

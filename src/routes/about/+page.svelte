@@ -1,7 +1,7 @@
 <script>
     import candidImage from "$lib/assets/about_us_candid.jpg";
     import dgsw from "$lib/assets/logos/dgsw_logo.svg";
-    
+
     // Importiere das Array aus deiner Datei
     import { universities } from "$lib/data/hardcoded";
     import { sponsors } from "$lib/data/hardcoded";
@@ -14,14 +14,24 @@
     <div class="description-text">
         <h2>What is <span class="highlight">Raw Talent</span>?</h2>
         <p>
-           Under the label RAW Talent game development students from various European universities come together and exhibit game projects created during their studies. Brought to life by Prof. Dr. Greta Hoffmann in 2024, RAW Talent gives students a chance  to gain a foothold in the games industry and build experience while simultaneously showcasing the future generation of game makers. Since 2024 RAW Talent has grown immensely, increasing from 3 to 18 universities and from 19 to over 90 projects.
+            Under the label RAW Talent game development students from various
+            European universities come together and exhibit game projects
+            created during their studies. Brought to life by Prof. Dr. Greta
+            Hoffmann in 2024, RAW Talent gives students a chance to gain a
+            foothold in the games industry and build experience while
+            simultaneously showcasing the future generation of game makers.
+            Since 2024 RAW Talent has grown immensely, increasing from 3 to 18
+            universities and from 19 to over 90 projects.
         </p>
     </div>
 </section>
+<!-- #region partners 
+ -->
 <section class="partner section">
     <div class="container">
-            <span class="afterline" style="--afterline-width: 10%;">Organizers</span>
-            <div class="partner-wrapper">
+        <span class="afterline" style="--afterline-width: 10%;">Organizers</span
+        >
+        <div class="partner-wrapper">
             <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -34,7 +44,7 @@
                 >
             </a>
         </div>
-            <span class="afterline" style="--afterline-width: 25%;">Sponsors</span>
+        <span class="afterline" style="--afterline-width: 25%;">Sponsors</span>
         <div class="partner-wrapper sponsors">
             {#each sponsors as sponsor}
                 <a
@@ -44,14 +54,18 @@
                     class="partner"
                 >
                     <!-- Siehe Hinweis zu den Bildern unten -->
-                    <img class="partner-img" src={sponsor.img} alt={`${sponsor.name} Logo`} />
-                    <span class="partner-name"
-                    >{sponsor.name}</span
-                >
+                    <img
+                        class="partner-img"
+                        src={sponsor.img}
+                        alt={`${sponsor.name} Logo`}
+                    />
+                    <span class="partner-name">{sponsor.name}</span>
                 </a>
             {/each}
         </div>
-            <span class="afterline" style="--afterline-width: 40%;">Universities</span>
+        <span class="afterline" style="--afterline-width: 40%;"
+            >Universities</span
+        >
         <div class="partner-wrapper universities">
             {#each universities as uni}
                 <a
@@ -60,15 +74,23 @@
                     href={uni.url}
                     class="partner"
                 >
-                    <img class="partner-img" src={uni.img} alt={`${uni.name} Logo`} />
+                    <img
+                        class="partner-img"
+                        src={uni.img}
+                        alt={`${uni.name} Logo`}
+                    />
                 </a>
             {/each}
         </div>
-
     </div>
 </section>
-<section class="container section">
-    <h2 class="center vip-title"><span class="highlight">Important</span> People:</h2>
+
+<!-- #region Important people 
+ -->
+<!-- <section class="container section">
+    <h2 class="center vip-title">
+        <span class="highlight">Important</span> People
+    </h2>
     <div class="vip-grid">
         {#each vips as vip, index}
             <div class="person-card">
@@ -76,20 +98,25 @@
                     <span>Person</span>
                     <span>// {vip.roleAtRawtalent}</span>
                 </div>
-                
+
                 <img src={vip.img} alt={vip.name} class="vip-img" />
-                
+
                 <div class="card-details">
                     <p>Name: {vip.name}</p>
                     <p>Position: {vip.position}</p>
-                    <p>Status: {vip.status ? 'Active' : 'Inactive'}</p>
-                    <p>At Rawtalent: {vip.atRawtalent} {vip.atRawtalent === 1 ? 'Year' : 'Years'}</p>
+                    <p>Status: {vip.status ? "Active" : "Inactive"}</p>
+                    <p>
+                        At Rawtalent: {vip.atRawtalent}
+                        {vip.atRawtalent === 1 ? "Year" : "Years"}
+                    </p>
                 </div>
             </div>
         {/each}
     </div>
-</section>
-<section class="container section">
+</section> -->
+<!-- #region presskit 
+ -->
+<!-- <section class="container section">
     <a
         target="_blank"
         rel="noopener noreferrer"
@@ -98,7 +125,8 @@
     >
         Press Kit
     </a>
-</section>
+</section> -->
+
 <!--<section class="container contact-section">
     <h2 class="center contact-title">Contact <span class="highlight">Us</span>:</h2>
     
@@ -143,12 +171,12 @@
     }
     h2 {
         font-family: var(--font-display);
-        font-size: clamp(2.0rem, 5vw, 4.2rem);
+        font-size: clamp(2rem, 5vw, 4.2rem);
         font-weight: 600;
         line-height: 1;
         text-transform: uppercase;
         letter-spacing: 0.02em;
-        margin: 1.25rem 0 2.0rem 0;
+        margin: 1.25rem 0 2rem 0;
     }
     .afterline {
         font-family: var(--font-display);
@@ -210,10 +238,18 @@
     .universities {
         --grid-width: 5;
     }
-    .universities .partner:last-child:nth-child(5n + 1) { grid-column: span 5; }
-    .universities .partner:last-child:nth-child(5n + 2) { grid-column: span 4; }
-    .universities .partner:last-child:nth-child(5n + 3) { grid-column: span 3; }
-    .universities .partner:last-child:nth-child(5n + 4) { grid-column: span 2; }
+    .universities .partner:last-child:nth-child(5n + 1) {
+        grid-column: span 5;
+    }
+    .universities .partner:last-child:nth-child(5n + 2) {
+        grid-column: span 4;
+    }
+    .universities .partner:last-child:nth-child(5n + 3) {
+        grid-column: span 3;
+    }
+    .universities .partner:last-child:nth-child(5n + 4) {
+        grid-column: span 2;
+    }
     .partner-img {
         max-height: 5rem;
     }
@@ -223,6 +259,7 @@
         font-size: clamp(0.5rem, 2.5vw, 1rem);
         text-align: center;
     }
+    /*
     .center {
         text-align: center;
         align-items: center;
@@ -244,12 +281,20 @@
         height: 24px;
         z-index: 2;
 
-        background: 
-        radial-gradient(circle, var(--color-text-white) 3px, transparent 3.5px),
-        linear-gradient(var(--color-text-white), var(--color-text-white)) left center / 7px 2px no-repeat,
-        linear-gradient(var(--color-text-white), var(--color-text-white)) right center / 7px 2px no-repeat,
-        linear-gradient(var(--color-text-white), var(--color-text-white)) center top / 2px 7px no-repeat,
-        linear-gradient(var(--color-text-white), var(--color-text-white)) center bottom / 2px 7px no-repeat;
+        background:
+            radial-gradient(
+                circle,
+                var(--color-text-white) 3px,
+                transparent 3.5px
+            ),
+            linear-gradient(var(--color-text-white), var(--color-text-white))
+                left center / 7px 2px no-repeat,
+            linear-gradient(var(--color-text-white), var(--color-text-white))
+                right center / 7px 2px no-repeat,
+            linear-gradient(var(--color-text-white), var(--color-text-white))
+                center top / 2px 7px no-repeat,
+            linear-gradient(var(--color-text-white), var(--color-text-white))
+                center bottom / 2px 7px no-repeat;
     }
     .person-card::before {
         top: 0;
@@ -290,6 +335,8 @@
         margin: 0 0 0.25rem 0;
         font-size: 1rem;
     }
+    */
+    /* 
     .press-kit {
         font-family: var(--font-display);
         background-color: var(--highlight);
@@ -299,10 +346,10 @@
         text-align: center;
         text-transform: uppercase;
         margin: 9vh auto;
-    }
-
-
-    <!-- .contact-title {
+    } 
+    */
+    /*
+    .contact-title {
         margin-bottom: 3vh;
     }
     .contact-form {
@@ -323,17 +370,17 @@
         flex-direction: column;
     }
     .form-group {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    margin-bottom: 3vh;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 3vh;
     }
     .form-group:last-of-type {
-    margin-bottom: 5vh;
+        margin-bottom: 5vh;
     }
     .form-group label {
-    color: var(--color-text-white);
-    margin-bottom: 2vh;
+        color: var(--color-text-white);
+        margin-bottom: 2vh;
     }
     .form-group input {
         width: 100%;
@@ -365,7 +412,8 @@
     .submit-btn:hover {
         background-color: var(--highlight);
         color: var(--color-background);
-    } -->
+    }
+    */
     .section {
         margin-bottom: 6rem;
     }
@@ -374,7 +422,7 @@
 
     @media screen and (max-width: 900px) {
         .vip-grid {
-        --grid-width: 2;
+            --grid-width: 2;
         }
     }
     @media screen and (max-width: 760px) {
@@ -387,9 +435,9 @@
             width: 100%;
         }
         .sponsors {
-            --grid-width: 2; 
+            --grid-width: 2;
         }
-        .sponsors  .partner:last-child:nth-child(odd){
+        .sponsors .partner:last-child:nth-child(odd) {
             grid-column: 1 / -1;
         }
         .vip-grid {
@@ -403,8 +451,12 @@
         .universities {
             --grid-width: 3;
         }
-        .universities .partner:last-child:nth-child(3n + 1) { grid-column: span 3; }
-        .universities .partner:last-child:nth-child(3n + 2) { grid-column: span 2; }
+        .universities .partner:last-child:nth-child(3n + 1) {
+            grid-column: span 3;
+        }
+        .universities .partner:last-child:nth-child(3n + 2) {
+            grid-column: span 2;
+        }
     }
     @media screen and (max-width: 460px) {
         .grid-description {
@@ -415,8 +467,8 @@
             margin: 0 auto;
             width: 100%;
         }
-        .sponsors{
-            --grid-width: 1; 
+        .sponsors {
+            --grid-width: 1;
         }
         .vip-grid {
             --grid-width: 1;
@@ -429,8 +481,8 @@
         .universities {
             --grid-width: 2;
         }
-        .universities .partner:last-child:nth-child(odd) { 
-            grid-column: span 2; 
+        .universities .partner:last-child:nth-child(odd) {
+            grid-column: span 2;
         }
     }
 </style>

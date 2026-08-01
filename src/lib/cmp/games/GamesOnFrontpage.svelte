@@ -1,14 +1,15 @@
 <script lang="ts">
-    import { universities } from "$lib/data/hardcoded";
     import type { RTEvent, RTGame } from "$lib/types";
-    import { shuffle, STATIC_FILE_PATH } from "$lib/utils";
+    import { shuffle } from "$lib/utils";
     import { ArrowRight } from "@lucide/svelte";
     import GameCapsule from "./GameCapsule.svelte";
 
     let { games = [], event }: { games: RTGame[]; event: RTEvent } = $props();
-    let gamesToDisplay: { tag: string; games: RTGame[] }[] = $derived(
-        chooseRandomGames(games),
-    );
+    let gamesToDisplay: { tag: string; games: RTGame[] }[] = $state([]);
+
+    $effect(() => {
+        chooseRandomGames(games);
+    });
 
     const AMOUNT_OF_GAMES_TO_DISPLAY: number = 3;
 
@@ -37,17 +38,21 @@
             returnGames.push({ tag, games });
         }
 
+        gamesToDisplay = returnGames;
         return returnGames;
     }
 
-    let overflowChecks: {[key: string]: HTMLDivElement} = $state({});
+    let overflowChecks: { [key: string]: HTMLDivElement } = $state({});
 </script>
 
 <div id="gamesOnFrontpage">
     {#each gamesToDisplay as games}
         <div class="game-section">
             <h3 class="game-section-tag">#{games.tag}</h3>
-            <div class="game-section-games" bind:this={overflowChecks[games.tag]}>
+            <div
+                class="game-section-games"
+                bind:this={overflowChecks[games.tag]}
+            >
                 {#each games.games as game}
                     <GameCapsule {game} maxTags={3} />
                 {/each}

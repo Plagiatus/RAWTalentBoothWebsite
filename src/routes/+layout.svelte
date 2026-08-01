@@ -79,12 +79,14 @@
 
 		--highlight: #3cb8ff;
 		--color-text-highlight: var(--highlight);
+		--color-text-on-highlight: var(--color-background);
 
 		--color-background: #081020;
 		--color-background-higher: #0d1a2e;
 
 		--max: 1280px;
 		scroll-behavior: smooth;
+		scrollbar-color: var(--highlight) var(--color-text-on-highlight);
 	}
 	:global(body) {
 		font-family: var(--font-body);
@@ -121,6 +123,7 @@
 		z-index: -1;
 	}
 	main {
+		padding-top: 5rem;
 		padding-bottom: var(--spacing-12);
 		min-height: 100vh;
 	}
@@ -131,6 +134,9 @@
 	}
 	:global(.highlight) {
 		color: var(--color-text-highlight) !important;
+	}
+	:global(h1),:global(h2),:global(h3){
+		font-family: var(--font-display);
 	}
     @media screen and (max-width: 628px) {
         :global(.container) {

@@ -1,309 +1,133 @@
 <script lang="ts">
     import logo from "$lib/assets/logos/RAWTalentLogo.svg";
-    import dgsw from "$lib/assets/logos/dgsw_logo.svg";
-    import mfgbw from "$lib/assets/logos/mfgbw_logo.svg";
-    import fs from "$lib/assets/logos/fs_logo.png";
-    
-    import ubav from "$lib/assets/logos/unis/uni_bayreuth_verein.svg";
+    import mapImage from "$lib/assets/2026/gamescom_2026_Hallenplan.png";
 
-    import cgl from "$lib/assets/logos/unis/cgl_th_koeln.svg";
-    import eth from "$lib/assets/logos/unis/eth_zuerich.svg";
-    import fabw from "$lib/assets/logos/unis/fabw.svg";
-    import fhms from "$lib/assets/logos/unis/fhms.svg";
-    import hdm from "$lib/assets/logos/unis/hdm_stuttgart.svg";
-    import hhn from "$lib/assets/logos/unis/hhn_heilbronn.svg";
-    import hda from "$lib/assets/logos/unis/hs_darmstadt.svg";
-    import hfu from "$lib/assets/logos/unis/hs_furtwangen.svg";
-    import hsmw from "$lib/assets/logos/unis/hs_mittweida.svg";
-    import hsnu from "$lib/assets/logos/unis/hs_neu_ulm.png";
-    import nord from "$lib/assets/logos/unis/nord_uni.svg";
-    import tha from "$lib/assets/logos/unis/th_augsburg.svg";
-    import tud from "$lib/assets/logos/unis/tu_darmstadt.svg";
-    import tum from "$lib/assets/logos/unis/tu_münchen.svg";
-    import ru from "$lib/assets/logos/unis/ru.png";
-    import uba from "$lib/assets/logos/unis/uni_bayreuth.svg";
-    import unsi from "$lib/assets/logos/unis/uni_siegen.svg";
-    import ut from "$lib/assets/logos/unis/uni_tuebingen.svg";
-    import tug from "$lib/assets/logos/unis/tu_graz.svg";
+    import GamesOnFrontpage from "$lib/cmp/games/GamesOnFrontpage.svelte";
 
+    let { data } = $props();
+
+    const memoryImports = import.meta.glob(
+        "$lib/assets/2026/memories/*.{jpg,JPG,jpeg,png,webp}",
+        {
+            eager: true,
+            query: "?url",
+            import: "default",
+        },
+    );
+
+    const memories = Object.values(memoryImports) as string[];
+    let carouselTrack: HTMLElement | null = null;
+    function scrollCarousel(direction: number) {
+        if (!carouselTrack) return;
+        const scrollAmount = carouselTrack.clientWidth / 3;
+        carouselTrack.scrollBy({
+            left: scrollAmount * direction,
+            behavior: "smooth",
+        });
+    }
 </script>
 
 <section id="hero" class="hero">
-    <div class="container">
+    <div class="container hero-content">
         <img src={logo} alt="RAW Talent" class="hero-img" />
-        <p class="hero-sub">
-            <span>Connecting Students, Universities,</span>
-            <span>and the Global Games Industry</span>
-            <span><span class="highlight">at Gamescom</span>.</span>
-        </p>
+
+        <h1 class="hero-title">
+            PLAY <span class="highlight">80+</span> INDIE GAMES
+        </h1>
+        <h2 class="hero-subtitle">MEET TOMORROW'S DEVELOPERS!</h2>
+
         <div class="hero-highlights">
             <div class="hero-highlight">
-                <span class="hero-highlight-info">Universities</span>
-                <span class="hero-highlight-value highlight">18</span>
+                <span class="hero-highlight-value">26. - 30.08.26</span>
             </div>
             <div class="hero-highlight">
-                <span class="hero-highlight-info">Games</span>
-                <span class="hero-highlight-value">60+</span>
+                <span class="hero-highlight-value">GAMESCOM<br />HALL 10.2</span
+                >
             </div>
-            <div class="hero-highlight">
-                <span class="hero-highlight-info">Booth</span>
-                <span class="hero-highlight-value">80 m²</span>
-            </div>
-            <div class="hero-highlight">
-                <span class="hero-highlight-info">Dates</span>
-                <span class="hero-highlight-value">Aug 26-30</span>
+        </div>
+
+        <div class="hero-about-wrapper">
+            <span class="afterline hero-about-line">About Us</span>
+            <div class="hero-about-box">
+                <p>
+                    RAW TALENT offers Gamescom visitors a firsthand look at the
+                    next generation of game developers. By bringing together 18
+                    universities from Germany and other European Countries, the
+                    initiative gives 160 students the opportunity to showcase
+                    their unique indie games to a broad audience. At the same
+                    time it provides these passionate game developers with their
+                    first step into the international games industry.
+                </p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="partners" class="partners">
+<section id="games">
     <div class="container">
-        <span class="overline">
-            Raw Talent is not possible without our partners & sponsors
-        </span>
-        <h2>
-            Our <span class="highlight">sponsors</span> and partner
-            <span class="highlight">universities</span>
+        <h2>This Year's <span class="highlight">Games</span></h2>
+        <span
+            >A random selection from the <span class="highlight"
+                >{data.games.length} games</span
+            > we're exhibiting this year</span
+        >
+        <GamesOnFrontpage event={data.event} games={data.games} />
+    </div>
+</section>
+
+<section id="location" class="location">
+    <div class="container">
+        <span class="afterline hero-about-line">Location</span>
+
+        <h2 class="location-title">
+            <span class="highlight">GAMESCOM</span> HALL
+            <span class="highlight">10.2</span>
+            BOOTH <span class="highlight">E-42</span>
         </h2>
-        <div style="margin-top: 5rem;"></div>
-        <span class="afterline">Organized by</span>
-        <div class="partner-wrapper">
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.spielwissenschaft.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={dgsw} alt="DGSW Logo" />
-                <span class="partner-name"
-                    >Deutsche Gesellschaft für Spielwissenschaft</span
-                >
-            </a>
-        </div>
-        <span class="afterline">Institutional Sponsors</span>
-        <div class="partner-wrapper sponsors">
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.mfg.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={mfgbw} alt="MFG BW Logo" />
-                <span class="partner-name"
-                    >MFG Medien- und Filmgesellschaft Baden-Württemberg</span
-                >
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.filmstiftung.de"
-                class="partner"
-            >
-                <img class="partner-img" src={fs} alt="FS Logo" />
-                <span class="partner-name">Film- und Medienstiftung NRW</span>
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.univerein.uni-bayreuth.de/de/index.html"
-                class="partner"
-            >
-                <img class="partner-img" src={ubav} alt="FS Logo" />
-                <span class="partner-name">Universitätsverein Bayreuth</span>
-            </a>
-        </div>
-        <span class="afterline">Participating Universities</span>
-        <div class="partner-wrapper universities">
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://colognegamelab.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={cgl} alt="Cologne Game Lab, TH Köln" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://gtc.inf.ethz.ch/"
-                class="partner"
-            >
-                <img class="partner-img" src={eth} alt="ETH Zürich" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.filmakademie.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={fabw} alt="Filmakademie Baden-Württemberg" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.fh-muenster.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={fhms} alt="FH Münster" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://hdm-stuttgart.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={hdm} alt="Hochschule der Medien Stuttgart" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.hs-heilbronn.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={hhn} alt="Hochschule Heilbronn" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://h-da.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={hda} alt="Hochschule Darmstadt" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://hs-furtwangen.de"
-                class="partner"
-            >
-                <img class="partner-img" src={hfu} alt="Hochschule Furtwangen" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.hs-mittweida.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={hsmw} alt="Hochschule Mittweida" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.hnu.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={hsnu} alt="Hochschule Neu-Ulm" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://nord.no/"
-                class="partner"
-            >
-                <img class="partner-img" src={nord} alt="Nord Universitet" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.ru.is/"
-                class="partner"
-            >
-                <img class="partner-img" src={ru} alt="Reykjavik University" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.tha.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={tha} alt="TH Augsburg" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.tu-darmstadt.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={tud} alt="TU Darmstadt" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.tum.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={tum} alt="TU München" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.uni-bayreuth.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={uba} alt="Uni Bayreuth" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.uni-siegen.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={unsi} alt="Uni Siegen" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://uni-tuebingen.de/"
-                class="partner"
-            >
-                <img class="partner-img" src={ut} alt="Uni Tübingen" />
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.tugraz.at"
-                class="partner"
-            >
-                <img class="partner-img" src={tug} alt="TU Graz" />
-            </a>
+
+        <div class="map-wrapper">
+            <img
+                src={mapImage}
+                alt="Gamescom Hall Allocation Map"
+                class="map-image"
+            />
         </div>
     </div>
 </section>
 
-<section id="about" class="about">
-    <div class="container split">
-        <div>
-            <span class="overline">About RAW Talent</span>
-            <h2>What is <span class="highlight">RAW Talent</span>?</h2>
-            <p>
-                RAW Talent is an innovative, cross-university format designed to
-                allow students to gain real world experience exhibiting their
-                games at an event like gamescom. Located next to the Indie Arena
-                Booth in Hall 10.2, students have the opportunity to showcase
-                their games to a wide audience.
-            </p>
-        </div>
-        <div>
-            <span class="overline">A force to be reckoned with</span>
-            <h2>Fast <span class="highlight">Growth</span></h2>
-            <p>
-                In just three years since its inception, RAW Talent has grown
-                remarkably!
-            </p>
-            <div class="about-highlights">
-                <div class="about-highlight">
-                    <span class="about-value highlight">3 → 18</span>
-                    <span class="about-label">Universities</span>
-                </div>
-                <div class="about-highlight">
-                    <span class="about-value">17 → 60+</span>
-                    <span class="about-label">Projects</span>
-                </div>
-                <div class="about-highlight">
-                    <span class="about-value">4 m² → 80 m²</span>
-                    <span class="about-label">Booth Size</span>
-                </div>
+<section id="memories" class="section">
+    <div class="container">
+        <h2 class="memories-title">
+            LAST YEAR'S <span class="highlight">MEMORIES</span>
+        </h2>
+
+        <div class="carousel-wrapper">
+            <div class="carousel-track" bind:this={carouselTrack}>
+                {#each memories as memory, index}
+                    <img
+                        src={memory}
+                        alt={`Memory ${index + 1}`}
+                        class="carousel-item"
+                    />
+                {/each}
+            </div>
+
+            <div class="carousel-controls">
+                <button
+                    class="control-btn"
+                    aria-label="Previous"
+                    onclick={() => scrollCarousel(-1)}
+                >
+                    &#10094;
+                </button>
+                <div class="control-line"></div>
+                <button
+                    class="control-btn"
+                    aria-label="Next"
+                    onclick={() => scrollCarousel(1)}
+                >
+                    &#10095;
+                </button>
             </div>
         </div>
     </div>
@@ -313,9 +137,12 @@
     #hero {
         min-height: 100vh;
         padding: 5rem 0;
-        font-family: var(--font-display);
-        display: grid;
-        place-items: center center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: -4rem;
+        position: relative;
     }
     #hero::before {
         --width: calc(100vh * 1980 / 900);
@@ -324,7 +151,6 @@
         background-size: var(--width) 100vh;
         background-repeat: repeat-x;
         animation: scrollbg 30s linear infinite;
-        position: relative;
         content: "";
         inset: 0;
         position: absolute;
@@ -339,102 +165,57 @@
             background-position: calc(-1 * var(--width)) 0;
         }
     }
-    .hero-img {
-        width: 100%;
-        margin-left: -6.5%;
-    }
-    .hero-sub {
-        margin: 2rem 0;
-    }
-    .hero-sub > span {
-        color: var(--color-text-muted);
-        display: block;
-        font-size: clamp(1.25rem, 4vw, 1.75rem);
-    }
-    .hero-highlights {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .hero-highlight {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem 1.5rem;
-        background-color: var(--color-blueprint-base);
-        border: 1px solid var(--color-blueprint-grid);
-    }
-    .hero-highlight-info {
-        color: var(--color-text-muted);
-        text-transform: uppercase;
-        font-size: clamp(0.5rem, 1.5vw, 0.75rem);
-        letter-spacing: 0.15rem;
-    }
-    .hero-highlight-value {
-        color: var(--color-text-white);
-        font-size: clamp(0.75rem, 3vw, 1.5rem);
-        font-weight: bold;
-    }
-
-    .partner-wrapper {
-        display: grid;
-        --grid-width: 1;
-        grid-template-columns: repeat(var(--grid-width), 1fr);
-    }
-    .sponsors {
-        --grid-width: 2;
-    }
-    .universities {
-        --grid-width: 4;
-    }
-    .partner {
-        border: 1px solid var(--color-blueprint-grid-strong);
-        padding: 2.75rem 2rem;
-        background-color: var(--color-background-higher);
+    .hero-content {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        color: var(--color-text-muted);
-        text-decoration: none;
-        font-family: var(--font-display);
-        text-transform: uppercase;
-    }
-    .partner-img {
-        max-height: 5rem;
-    }
-    .partner-name {
-        margin-top: 1rem;
-        letter-spacing: 0.1em;
-        font-size: clamp(0.5rem, 2.5vw, 1rem);
         text-align: center;
+        width: 100%;
+        z-index: 1;
     }
-
-    .about-highlights {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 4rem;
+    .hero-img {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 2rem;
     }
-    .about-highlight {
-        display: flex;
-        flex-direction: column;
+    .hero-title {
         font-family: var(--font-display);
-        gap: 0.3em;
-    }
-    .about-value {
-        color: var(--color-text-white);
-        font-size: clamp(0.75rem, 3vw, 1.75rem);
+        font-size: clamp(4rem, 6vw, 7rem);
+        margin: 0;
         font-weight: 700;
-    }
-    .about-label {
         text-transform: uppercase;
-        color: var(--color-text-muted);
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        font-size: clamp(0.5rem, 1.5vw, 0.75rem);
+        letter-spacing: 0;
+    }
+    .hero-subtitle {
+        font-family: var(--font-display);
+        font-size: clamp(1.2rem, 3vw, 2.2rem);
+        margin: 0.25rem 0 3.5rem 0;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 1000;
+        color: var(--color-text-white);
+    }
+    .hero-highlights {
+        display: flex;
+        gap: 3rem;
+        margin-bottom: 4rem;
+    }
+    .hero-highlight {
+        display: flex;
+        width: 250px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1.5rem 0;
+        background-color: var(--color-background-higher);
     }
 
-    #about p {
-        font-size: clamp(0.75rem, 1.5vw, 1rem);
+    .hero-highlight-value {
+        color: var(--color-text-white);
+        font-family: var(--font-body);
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        font-weight: 500;
+        line-height: 1.4;
     }
 
     section {
@@ -445,29 +226,10 @@
         border-bottom: 1px solid var(--color-blueprint-grid-strong);
         border-top: 1px solid var(--color-blueprint-grid-strong);
     }
-    .overline {
-        font-family: var(--font-display);
-        font-size: clamp(0.4rem, 1.75vw, 0.7rem);
-        font-weight: 400;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: var(--highlight);
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-    }
-    .overline::before {
-        content: "";
-        display: inline-block;
-        width: 2rem;
-        height: 1px;
-        background: var(--highlight);
-        flex-shrink: 0;
-    }
 
     h2 {
         font-family: var(--font-display);
-        font-size: clamp(2.0rem, 5vw, 4.2rem);
+        font-size: clamp(2rem, 5vw, 4.2rem);
         font-weight: 600;
         line-height: 1;
         text-transform: uppercase;
@@ -495,35 +257,119 @@
         background: var(--color-text-muted);
         flex-shrink: 0;
     }
-    .split {
-        display: grid;
-        gap: 3rem;
-        grid-template-columns: 1fr 1fr;
+
+    .hero-about-wrapper {
+        width: min(var(--max), calc(100vw - 4rem));
+        margin: 0 auto;
+    }
+    .hero-about-line {
+        color: var(--color-text-white);
+        position: relative;
+        letter-spacing: 0.25em;
+        font-size: 1rem;
+        z-index: 2;
+    }
+    .hero-about-line::before,
+    .hero-about-line::after {
+        background: var(--color-text-white);
+    }
+    .hero-about-box {
+        background-color: var(--color-background-higher);
+        padding: 2.5rem 4rem;
+        margin-top: -0.4rem;
+        position: relative;
+        z-index: 1;
+    }
+    .hero-about-box p {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        font-weight: 400;
+        margin: 0;
+        text-align: center;
+    }
+    .map-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .map-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .carousel-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .carousel-track {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .carousel-track::-webkit-scrollbar {
+        display: none;
+    }
+    .carousel-item {
+        flex: 0 0 calc(100% / 3);
+        width: calc(100% / 3);
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        scroll-snap-align: start;
+    }
+    .carousel-controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        gap: 1rem;
+    }
+    .control-btn {
+        background: none;
+        border: none;
+        color: var(--color-text-white);
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        transition: color 0.2s;
+    }
+    .control-btn:hover {
+        color: var(--highlight);
     }
 
     @media screen and (max-width: 1024px) {
-        .split {
-            grid-template-columns: 1fr;
-        }
-        .universities {
-            --grid-width: 3;
-        }
-        .partner {
-            padding: 2rem 1.5rem;
-        }
         section {
             padding: 4rem 0;
         }
     }
     @media screen and (max-width: 628px) {
+        .hero-highlights {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            width: 100%;
+        }
         .hero-highlight {
-            padding: 0.5rem 0.75rem;
+            width: 100%;
+            max-width: 280px;
+            padding: 1rem;
         }
-        .universities {
-            --grid-width: 2;
+        .hero-about-box {
+            padding: 2rem 1.5rem;
         }
-        .partner {
-            padding: 1rem 0.75rem;
+        .carousel-item {
+            flex: 0 0 100%;
+            width: 100%;
         }
     }
 </style>

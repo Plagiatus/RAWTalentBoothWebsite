@@ -1,5 +1,5 @@
 <script>
-    import { shuffle } from "$lib";
+    import { shuffle } from "$lib/utils";
     import { games } from "$lib/data/games";
     import Game from "../Game.svelte";
 

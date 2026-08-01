@@ -79,7 +79,7 @@
 
 <section id="games">
     <div class="container">
-        <h2>This Years <span class="highlight">Games</span></h2>
+        <h2>This Year's <span class="highlight">Games</span></h2>
         <span
             >A random selection from the <span class="highlight"
                 >{data.games.length} games</span
@@ -94,7 +94,7 @@
         <span class="afterline hero-about-line">Location</span>
         
         <h2 class="location-title">
-            <span class="highlight">GAMESCOM</span> HALL <span class="highlight">10.2</span> BOOTH <span class="highlight">XY</span>
+            <span class="highlight">GAMESCOM</span> HALL <span class="highlight">10.2</span> BOOTH <span class="highlight">E-42</span>
         </h2>
         
         <div class="map-wrapper">
@@ -105,7 +105,7 @@
 
 <section id="memories" class="section">
     <div class="container">
-        <h2 class="memories-title">LAST YEARS <span class="highlight">MEMORIES</span></h2>
+        <h2 class="memories-title">LAST YEAR'S <span class="highlight">MEMORIES</span></h2>
         
         <div class="carousel-wrapper">
             <div class="carousel-track" bind:this={carouselTrack}>

@@ -60,7 +60,6 @@
                     href={uni.url}
                     class="partner"
                 >
-                    <!-- Siehe Hinweis zu den Bildern unten -->
                     <img class="partner-img" src={uni.img} alt={`${uni.name} Logo`} />
                 </a>
             {/each}
@@ -100,7 +99,7 @@
         Press Kit
     </a>
 </section>
-<!-- <section class="container contact-section">
+<!--<section class="container contact-section">
     <h2 class="center contact-title">Contact <span class="highlight">Us</span>:</h2>
     
     <div class="contact-form">
@@ -123,7 +122,7 @@
             <button type="submit" class="submit-btn">Submit</button>
         </form>
     </div>
-</section> -->
+</section>-->
 
 <style>
     .grid-description {

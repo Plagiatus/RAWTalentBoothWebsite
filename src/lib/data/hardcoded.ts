@@ -59,19 +59,12 @@ export const sponsors: Sponsor[] = [
 
 export const vips: VIP[] = [
     {
-        name: "John Doe",
+        name: "Dr. Greta Hoffmann",
         position: "Team Lead",
         status: true,
-        atRawtalent: 2,
+        atRawtalent: 3,
         img: vipImage01,
-        roleAtRawtalent: "Role at RAW",
-    }, {
-        name: "John Doe",
-        position: "Game Developer",
-        status: true,
-        atRawtalent: 5,
-        img: vipImage01,
-        roleAtRawtalent: "Role at RAW",
+        roleAtRawtalent: "Organizer",
     }, {
         name: "John Doe",
         position: "Game Developer",

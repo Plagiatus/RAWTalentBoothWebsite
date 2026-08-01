@@ -1,48 +1,29 @@
 <script lang="ts">
     import logo from "$lib/assets/logos/RAWTalentLogo.svg";
-    import dgsw from "$lib/assets/logos/dgsw_logo.svg";
-    import mfgbw from "$lib/assets/logos/mfgbw_logo.svg";
-    import fs from "$lib/assets/logos/fs_logo.png";
-
-    import ubav from "$lib/assets/logos/unis/uni_bayreuth_verein.svg";
-
-    import cgl from "$lib/assets/logos/unis/cgl_th_koeln.svg";
-    import eth from "$lib/assets/logos/unis/eth_zuerich.svg";
-    import fabw from "$lib/assets/logos/unis/fabw.svg";
-    import fhms from "$lib/assets/logos/unis/fhms.svg";
-    import hdm from "$lib/assets/logos/unis/hdm_stuttgart.svg";
-    import hhn from "$lib/assets/logos/unis/hhn_heilbronn.svg";
-    import hda from "$lib/assets/logos/unis/hs_darmstadt.svg";
-    import hfu from "$lib/assets/logos/unis/hs_furtwangen.svg";
-    import hsmw from "$lib/assets/logos/unis/hs_mittweida.svg";
-    import hsnu from "$lib/assets/logos/unis/hs_neu_ulm.png";
-    import nord from "$lib/assets/logos/unis/nord_uni.svg";
-    import tha from "$lib/assets/logos/unis/th_augsburg.svg";
-    import tud from "$lib/assets/logos/unis/tu_darmstadt.svg";
-    import tum from "$lib/assets/logos/unis/tu_münchen.svg";
-    import ru from "$lib/assets/logos/unis/ru.png";
-    import uba from "$lib/assets/logos/unis/uni_bayreuth.svg";
-    import unsi from "$lib/assets/logos/unis/uni_siegen.svg";
-    import ut from "$lib/assets/logos/unis/uni_tuebingen.svg";
-    import tug from "$lib/assets/logos/unis/tu_graz.svg";
     import mapImage from "$lib/assets/2026/gamescom_2026_Hallenplan.png";
 
     import GamesOnFrontpage from "$lib/cmp/games/GamesOnFrontpage.svelte";
 
     let { data } = $props();
 
-    const memoryImports = import.meta.glob('$lib/assets/2026/memories/*.{jpg,JPG,jpeg,png,webp}', {
-        eager: true,
-        query: '?url',
-        import: 'default'
-    });
+    const memoryImports = import.meta.glob(
+        "$lib/assets/2026/memories/*.{jpg,JPG,jpeg,png,webp}",
+        {
+            eager: true,
+            query: "?url",
+            import: "default",
+        },
+    );
 
     const memories = Object.values(memoryImports) as string[];
     let carouselTrack: HTMLElement | null = null;
     function scrollCarousel(direction: number) {
         if (!carouselTrack) return;
         const scrollAmount = carouselTrack.clientWidth / 3;
-        carouselTrack.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+        carouselTrack.scrollBy({
+            left: scrollAmount * direction,
+            behavior: "smooth",
+        });
     }
 </script>
 
@@ -53,16 +34,15 @@
         <h1 class="hero-title">
             PLAY <span class="highlight">80+</span> INDIE GAMES
         </h1>
-        <h2 class="hero-subtitle">
-            MEET TOMORROW’S DEVELOPERS!
-        </h2>
+        <h2 class="hero-subtitle">MEET TOMORROW'S DEVELOPERS!</h2>
 
         <div class="hero-highlights">
             <div class="hero-highlight">
                 <span class="hero-highlight-value">26. - 30.08.26</span>
             </div>
             <div class="hero-highlight">
-                <span class="hero-highlight-value">GAMESCOM<br>HALL 10.2</span>
+                <span class="hero-highlight-value">GAMESCOM<br />HALL 10.2</span
+                >
             </div>
         </div>
 
@@ -70,7 +50,13 @@
             <span class="afterline hero-about-line">About Us</span>
             <div class="hero-about-box">
                 <p>
-                    RAW TALENT offers Gamescom visitors a firsthand look at the next generation of game developers. By bringing together 18 universities from Germany and Austria, the initiative gives 160 students the opportunity to showcase their unique indie games to a broad audience. At the same time,it provides these passionate game developers with their first step into the international games industry.
+                    RAW TALENT offers Gamescom visitors a firsthand look at the
+                    next generation of game developers. By bringing together 18
+                    universities from Germany and other European Countries, the
+                    initiative gives 160 students the opportunity to showcase
+                    their unique indie games to a broad audience. At the same
+                    time it provides these passionate game developers with their
+                    first step into the international games industry.
                 </p>
             </div>
         </div>
@@ -92,34 +78,54 @@
 <section id="location" class="location">
     <div class="container">
         <span class="afterline hero-about-line">Location</span>
-        
+
         <h2 class="location-title">
-            <span class="highlight">GAMESCOM</span> HALL <span class="highlight">10.2</span> BOOTH <span class="highlight">E-42</span>
+            <span class="highlight">GAMESCOM</span> HALL
+            <span class="highlight">10.2</span>
+            BOOTH <span class="highlight">E-42</span>
         </h2>
-        
+
         <div class="map-wrapper">
-            <img src={mapImage} alt="Gamescom Hall Allocation Map" class="map-image" />
+            <img
+                src={mapImage}
+                alt="Gamescom Hall Allocation Map"
+                class="map-image"
+            />
         </div>
     </div>
 </section>
 
 <section id="memories" class="section">
     <div class="container">
-        <h2 class="memories-title">LAST YEAR'S <span class="highlight">MEMORIES</span></h2>
-        
+        <h2 class="memories-title">
+            LAST YEAR'S <span class="highlight">MEMORIES</span>
+        </h2>
+
         <div class="carousel-wrapper">
             <div class="carousel-track" bind:this={carouselTrack}>
                 {#each memories as memory, index}
-                    <img src={memory} alt={`Memory ${index + 1}`} class="carousel-item" />
+                    <img
+                        src={memory}
+                        alt={`Memory ${index + 1}`}
+                        class="carousel-item"
+                    />
                 {/each}
             </div>
 
             <div class="carousel-controls">
-                <button class="control-btn" aria-label="Previous" onclick={() => scrollCarousel(-1)}>
+                <button
+                    class="control-btn"
+                    aria-label="Previous"
+                    onclick={() => scrollCarousel(-1)}
+                >
                     &#10094;
                 </button>
                 <div class="control-line"></div>
-                <button class="control-btn" aria-label="Next" onclick={() => scrollCarousel(1)}>
+                <button
+                    class="control-btn"
+                    aria-label="Next"
+                    onclick={() => scrollCarousel(1)}
+                >
                     &#10095;
                 </button>
             </div>
@@ -256,14 +262,14 @@
         width: min(var(--max), calc(100vw - 4rem));
         margin: 0 auto;
     }
-    .hero-about-line{
+    .hero-about-line {
         color: var(--color-text-white);
         position: relative;
         letter-spacing: 0.25em;
         font-size: 1rem;
         z-index: 2;
     }
-    .hero-about-line::before, 
+    .hero-about-line::before,
     .hero-about-line::after {
         background: var(--color-text-white);
     }

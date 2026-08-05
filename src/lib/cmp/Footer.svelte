@@ -4,7 +4,7 @@
 
 <footer>
     <div id="footer-left">
-        <span><span class="highlight">RAW</span> Talent @ Gamescom</span>
+        <span><span class="highlight">RAW</span> Talent @ gamescom</span>
         <nav id="social-links">
             <a
                 href="https://www.instagram.com/raw_talent_booth/"

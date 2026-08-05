@@ -32,7 +32,7 @@
         <img src={logo} alt="RAW Talent" class="hero-img" />
 
         <h1 class="hero-title">
-            PLAY <span class="highlight">80+</span> INDIE GAMES
+            PLAY <span class="highlight">90+</span> INDIE GAMES
         </h1>
         <h2 class="hero-subtitle">MEET TOMORROW'S DEVELOPERS!</h2>
 
@@ -41,7 +41,7 @@
                 <span class="hero-highlight-value">26. - 30.08.26</span>
             </div>
             <div class="hero-highlight">
-                <span class="hero-highlight-value">GAMESCOM<br />HALL 10.2</span
+                <span class="hero-highlight-value">gamescom<br />hall 10.2</span
                 >
             </div>
         </div>
@@ -50,10 +50,10 @@
             <span class="afterline hero-about-line">About Us</span>
             <div class="hero-about-box">
                 <p>
-                    RAW TALENT offers Gamescom visitors a firsthand look at the
+                    RAW TALENT offers gamescom visitors a firsthand look at the
                     next generation of game developers. By bringing together 18
                     universities from Germany and other European Countries, the
-                    initiative gives 160 students the opportunity to showcase
+                    initiative gives 380+ students the opportunity to showcase
                     their unique indie games to a broad audience. At the same
                     time it provides these passionate game developers with their
                     first step into the international games industry.
@@ -80,7 +80,7 @@
         <span class="afterline hero-about-line">Location</span>
 
         <h2 class="location-title">
-            <span class="highlight">GAMESCOM</span> HALL
+            <span class="highlight">gamescom</span> hall
             <span class="highlight">10.2</span>
             BOOTH <span class="highlight">E-42</span>
         </h2>
@@ -88,7 +88,7 @@
         <div class="map-wrapper">
             <img
                 src={mapImage}
-                alt="Gamescom Hall Allocation Map"
+                alt="gamescom Hall Allocation Map"
                 class="map-image"
             />
         </div>
@@ -145,12 +145,13 @@
         position: relative;
     }
     #hero::before {
-        --width: calc(100vh * 1980 / 900);
-        background-image: url("/assets/2025/opener_transparent.png");
+        --aspect-ratio: calc(3256 / 900);
+        --width: calc(100vh * var(--aspect-ratio));
+        background-image: url("/assets/2026/hero.webp");
         background-position: 0 0;
         background-size: var(--width) 100vh;
         background-repeat: repeat-x;
-        animation: scrollbg 30s linear infinite;
+        animation: scrollbg calc(15s * var(--aspect-ratio)) linear infinite;
         content: "";
         inset: 0;
         position: absolute;

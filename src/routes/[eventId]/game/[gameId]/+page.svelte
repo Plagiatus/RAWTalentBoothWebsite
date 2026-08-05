@@ -152,7 +152,7 @@
                     class={["play-button"]}
                 >
                     <Icon icon={getLinkType(firstGameLink)} />
-                    Play Now
+                    Check it out
                 </a>
             </div>
         {/if}

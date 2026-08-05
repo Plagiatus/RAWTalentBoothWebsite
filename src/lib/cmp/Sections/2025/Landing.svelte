@@ -51,7 +51,7 @@
                         <MapPin />
                     </span>
                     <span class="title">Location</span>
-                    <span class="content">Gamescom, Cologne</span>
+                    <span class="content">gamescom, Cologne</span>
                 </div>
             </div>
         </div>

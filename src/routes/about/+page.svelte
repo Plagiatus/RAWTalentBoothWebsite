@@ -20,8 +20,8 @@
             Hoffmann in 2024, RAW Talent gives students a chance to gain a
             foothold in the games industry and build experience while
             simultaneously showcasing the future generation of game makers.
-            Since 2024 RAW Talent has grown immensely, increasing from 3 to 18
-            universities and from 19 to over 90 projects.
+            Since 2024 RAW Talent has grown immensely, increasing from 3 to <span class="highlight">18
+            universities</span> and from 19 to <span class="highlight">over 90 projects</span>.
         </p>
     </div>
 </section>

@@ -145,7 +145,7 @@
         position: relative;
     }
     #hero::before {
-        --aspect-ratio: calc(3256 / 900);
+        --aspect-ratio: calc(3215 / 900);
         --width: calc(100vh * var(--aspect-ratio));
         background-image: url("/assets/2026/hero.webp");
         background-position: 0 0;

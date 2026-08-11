@@ -47,6 +47,6 @@ type VIP = {
     roleAtRawtalent: string,
     position: string,
     status: boolean,
-    atRawtalent: number,
+    atRawtalentSince: number,
     img: string,
 }

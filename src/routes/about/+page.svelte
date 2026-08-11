@@ -6,6 +6,7 @@
     import { universities } from "$lib/data/hardcoded";
     import { sponsors } from "$lib/data/hardcoded";
     import { vips } from "$lib/data/hardcoded";
+    import { STATIC_FILE_PATH } from "$lib/utils";
 </script>
 
 <section class="grid-description container section">
@@ -20,8 +21,10 @@
             Hoffmann in 2024, RAW Talent gives students a chance to gain a
             foothold in the games industry and build experience while
             simultaneously showcasing the future generation of game makers.
-            Since 2024 RAW Talent has grown immensely, increasing from 3 to <span class="highlight">18
-            universities</span> and from 19 to <span class="highlight">over 90 projects</span>.
+            Since 2024 RAW Talent has grown immensely, increasing from 3 to <span
+                class="highlight">18 universities</span
+            >
+            and from 19 to <span class="highlight">over 90 projects</span>.
         </p>
     </div>
 </section>
@@ -87,7 +90,7 @@
 
 <!-- #region Important people 
  -->
-<!-- <section class="container section">
+<section class="container section">
     <h2 class="center vip-title">
         <span class="highlight">Important</span> People
     </h2>
@@ -95,25 +98,32 @@
         {#each vips as vip, index}
             <div class="person-card">
                 <div class="card-header">
-                    <span>Person</span>
-                    <span>// {vip.roleAtRawtalent}</span>
+                    <span>{vip.name}</span>
+                    <span>// {vip.position}</span>
                 </div>
 
-                <img src={vip.img} alt={vip.name} class="vip-img" />
+                <source
+                    srcset={STATIC_FILE_PATH + vip.img}
+                    media="(min-width:1px)"
+                />
+                <img
+                    src={STATIC_FILE_PATH + vip.img}
+                    alt={vip.name}
+                    class="vip-img"
+                    onerror="{()=>{this.src = STATIC_FILE_PATH + "people/placeholder.webp"}}"
+                />
 
                 <div class="card-details">
-                    <p>Name: {vip.name}</p>
-                    <p>Position: {vip.position}</p>
-                    <p>Status: {vip.status ? "Active" : "Inactive"}</p>
-                    <p>
-                        At Rawtalent: {vip.atRawtalent}
-                        {vip.atRawtalent === 1 ? "Year" : "Years"}
+                    <p class="card-details-since">
+                        since {vip.atRawtalentSince}
                     </p>
+                    <p class="card-details-role">{vip.roleAtRawtalent}</p>
                 </div>
             </div>
         {/each}
     </div>
-</section> -->
+</section>
+
 <!-- #region presskit 
  -->
 <!-- <section class="container section">
@@ -190,11 +200,12 @@
         gap: 0.75rem;
         position: relative;
         z-index: 2;
+        background-color: var(--color-background-higher);
     }
     .afterline::before {
         content: "";
         display: inline-block;
-        height: 1px;
+        height: 2px;
         width: var(--afterline-width, 3rem);
         background: var(--color-text-white);
         flex-shrink: 0;
@@ -202,7 +213,7 @@
     .afterline::after {
         content: "";
         display: inline-block;
-        height: 1px;
+        height: 2px;
         flex-grow: 1;
         background: var(--color-text-white);
         flex-shrink: 0;
@@ -218,6 +229,7 @@
         text-decoration: none;
         font-family: var(--font-display);
         text-transform: uppercase;
+        border: var(--border);
     }
     .partner.section {
         margin-bottom: 4vh;
@@ -226,29 +238,28 @@
         display: grid;
         --grid-width: 1;
         grid-template-columns: repeat(var(--grid-width), 1fr);
-        gap: 1px;
-        background-color: var(--color-text-white);
-        margin-top: -0.5rem;
+        background-color: var(--color-background-higher);
+        margin-bottom: 3rem;
+        /* margin-top: -0.5rem; */
         position: relative;
         z-index: 1;
+
+        --border: 1px solid var(--color-text-white);
     }
+    .partner-wrapper::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: var(--border);
+        border-color: var(--color-background-higher);
+        pointer-events: none;
+    }
+
     .sponsors {
         --grid-width: 3;
     }
     .universities {
         --grid-width: 5;
-    }
-    .universities .partner:last-child:nth-child(5n + 1) {
-        grid-column: span 5;
-    }
-    .universities .partner:last-child:nth-child(5n + 2) {
-        grid-column: span 4;
-    }
-    .universities .partner:last-child:nth-child(5n + 3) {
-        grid-column: span 3;
-    }
-    .universities .partner:last-child:nth-child(5n + 4) {
-        grid-column: span 2;
     }
     .partner-img {
         max-height: 5rem;
@@ -259,7 +270,7 @@
         font-size: clamp(0.5rem, 2.5vw, 1rem);
         text-align: center;
     }
-    /*
+
     .center {
         text-align: center;
         align-items: center;
@@ -313,6 +324,7 @@
         justify-content: space-between;
         margin-bottom: 2rem;
         font-size: 1.25rem;
+        font-family: var(--font-display);
     }
     .vip-grid {
         display: grid;
@@ -329,13 +341,25 @@
         width: 100%;
         aspect-ratio: 1 / 1;
         object-fit: cover;
-        margin-bottom: 2rem;
+    }
+    .vip-img::before {
+        content: " ";
+        display: block;
+        position: absolute;
+    }
+    .card-details {
+        display: flex;
+        flex-direction: column;
     }
     .card-details p {
         margin: 0 0 0.25rem 0;
         font-size: 1rem;
     }
-    */
+    .card-details-since {
+        text-align: right;
+        color: var(--color-text-muted);
+    }
+
     /* 
     .press-kit {
         font-family: var(--font-display);
@@ -451,11 +475,8 @@
         .universities {
             --grid-width: 3;
         }
-        .universities .partner:last-child:nth-child(3n + 1) {
-            grid-column: span 3;
-        }
-        .universities .partner:last-child:nth-child(3n + 2) {
-            grid-column: span 2;
+        .partner {
+            padding: 1.25rem 0.5rem;
         }
     }
     @media screen and (max-width: 460px) {
@@ -480,9 +501,6 @@
         }
         .universities {
             --grid-width: 2;
-        }
-        .universities .partner:last-child:nth-child(odd) {
-            grid-column: span 2;
         }
     }
 </style>

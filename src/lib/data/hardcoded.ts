@@ -24,8 +24,7 @@ import tugLogo from "$lib/assets/logos/unis/tu_graz.svg";
 import mfgLogo from "$lib/assets/logos/mfgbw_logo.svg";
 import fmnrwLogo from "$lib/assets/logos/fs_logo.png";
 import ubavLogo from "$lib/assets/logos/unis/uni_bayreuth_verein.svg";
-import vipImage01 from "$lib/assets/john_doe.png";
-// Some of this stuff we should consider moving to the database, like the universities maybe?
+// Some of this stuff we should consider moving to the database, like the partners and the people - maybe even the tags
 
 export enum GameEngine {
     GODOT = "godot",
@@ -59,40 +58,47 @@ export const sponsors: Sponsor[] = [
 
 export const vips: VIP[] = [
     {
-        name: "Dr. Greta Hoffmann",
-        position: "Team Lead",
+        name: "Prof. Stephan Jacob",
+        position: "Chairman",
         status: true,
-        atRawtalent: 3,
-        img: vipImage01,
-        roleAtRawtalent: "Organizer",
+        atRawtalentSince: 2024,
+        img: "people/stephan_jacob.webp",
+        roleAtRawtalent: "President of the DGSW and Main Organizer",
     }, {
-        name: "John Doe",
-        position: "Game Developer",
+        name: "Prof. Dr. Greta Hoffmann",
+        position: "Founder",
         status: true,
-        atRawtalent: 5,
-        img: vipImage01,
-        roleAtRawtalent: "Role at RAW",
+        atRawtalentSince: 2024,
+        img: "people/greta_hoffmann.webp",
+        roleAtRawtalent: "Initiator of RAWTalent and Main Organizer",
     }, {
-        name: "John Doe",
-        position: "Game Developer",
+        name: "Erik Hasenknopf",
+        position: "Organizer Team",
         status: true,
-        atRawtalent: 5,
-        img: vipImage01,
-        roleAtRawtalent: "Role at RAW",
+        atRawtalentSince: 2024,
+        img: "erik_hasenknopf.webp",
+        roleAtRawtalent: "Main Organizer & Coordinator",
     }, {
-        name: "John Doe",
-        position: "Game Developer",
+        name: "Erik Nitsche",
+        position: "Organizer Team",
         status: true,
-        atRawtalent: 5,
-        img: vipImage01,
-        roleAtRawtalent: "Role at RAW",
+        atRawtalentSince: 2024,
+        img: "erik_nitsche.webp",
+        roleAtRawtalent: "Main Organizer & Coordinator",
     }, {
-        name: "John Doe",
-        position: "Game Developer",
+        name: "Xeno Boecker",
+        position: "Organizer Team",
         status: true,
-        atRawtalent: 5,
-        img: vipImage01,
-        roleAtRawtalent: "Role at RAW",
+        atRawtalentSince: 2024,
+        img: "xeno_boecker.webp",
+        roleAtRawtalent: "Main Organizer & Coordinator",
+    }, {
+        name: "Lukas Scheuerle",
+        position: "Team",
+        status: true,
+        atRawtalentSince: 2025,
+        img: "people/lukas_scheuerle.webp",
+        roleAtRawtalent: "Website and miscellaneous organizational work",
     },
 ]
 
@@ -177,11 +183,11 @@ export const universities: University[] = [
         id: "uba",
         img: ubaLogo,
         name: "Uni Bayreuth",
-    }, {
-        url: "https://www.uni-siegen.de/",
-        id: "unsi",
-        img: unsiLogo,
-        name: "Uni Siegen",
+    // }, {
+    //     url: "https://www.uni-siegen.de/",
+    //     id: "unsi",
+    //     img: unsiLogo,
+    //     name: "Uni Siegen",
     }, {
         url: "https://uni-tuebingen.de/",
         id: "ut",

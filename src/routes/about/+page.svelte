@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import candidImage from "$lib/assets/about_us_candid.jpg";
     import dgsw from "$lib/assets/logos/dgsw_logo.svg";
 
@@ -7,6 +7,11 @@
     import { sponsors } from "$lib/data/hardcoded";
     import { vips } from "$lib/data/hardcoded";
     import { STATIC_FILE_PATH } from "$lib/utils";
+
+    function setPlaceholderImage(_ev: Event) {
+        let img: HTMLImageElement = _ev.target as HTMLImageElement;
+        img.src = STATIC_FILE_PATH + "people/placeholder.webp";
+    }
 </script>
 
 <section class="grid-description container section">
@@ -110,7 +115,7 @@
                     src={STATIC_FILE_PATH + vip.img}
                     alt={vip.name}
                     class="vip-img"
-                    onerror="{()=>{this.src = STATIC_FILE_PATH + "people/placeholder.webp"}}"
+                    onerror="{setPlaceholderImage}"
                 />
 
                 <div class="card-details">

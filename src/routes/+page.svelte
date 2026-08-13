@@ -3,6 +3,7 @@
     import mapImage from "$lib/assets/2026/gamescom_2026_Hallenplan.png";
 
     import GamesOnFrontpage from "$lib/cmp/games/GamesOnFrontpage.svelte";
+    import { CalendarDays, MapPin } from "@lucide/svelte";
 
     let { data } = $props();
 
@@ -37,10 +38,12 @@
         <h2 class="hero-subtitle">MEET TOMORROW'S DEVELOPERS!</h2>
 
         <div class="hero-highlights">
-            <div class="hero-highlight">
+            <div class="hero-highlight corner-decal">
+                <CalendarDays color="var(--highlight)" size="2.5em" />
                 <span class="hero-highlight-value">26. - 30.08.26</span>
             </div>
-            <div class="hero-highlight">
+            <div class="hero-highlight corner-decal">
+                <MapPin color="var(--highlight)" size="2.5em"/>
                 <span class="hero-highlight-value">gamescom<br />hall 10.2</span
                 >
             </div>
@@ -202,13 +205,15 @@
         margin-bottom: 4rem;
     }
     .hero-highlight {
-        display: flex;
+        display: grid;
+        grid-template-columns: auto 1fr;
         width: 250px;
         align-items: center;
         justify-content: center;
-        text-align: center;
-        padding: 1.5rem 0;
-        background-color: var(--color-background-higher);
+        text-align: left;
+        padding: 1.5rem;
+        gap: 1.5rem;
+        background-color: color-mix(in srgb, var(--color-background-higher) 90%, transparent 10%) ;
     }
 
     .hero-highlight-value {

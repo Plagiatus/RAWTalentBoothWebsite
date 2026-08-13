@@ -61,7 +61,7 @@ export const vips: VIP[] = [
         name: "Prof. Stephan Jacob",
         position: "Chairman",
         status: true,
-        atRawtalentSince: 2024,
+        atRawtalentSince: 2025,
         img: "people/stephan_jacob.webp",
         roleAtRawtalent: "President of the DGSW and Main Organizer",
     }, {

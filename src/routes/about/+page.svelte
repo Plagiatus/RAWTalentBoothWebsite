@@ -101,7 +101,7 @@
     </h2>
     <div class="vip-grid">
         {#each vips as vip, index}
-            <div class="person-card">
+            <div class="person-card corner-decal">
                 <div class="card-header">
                     <span>{vip.name}</span>
                     <span>// {vip.position}</span>
@@ -288,40 +288,6 @@
         flex-direction: column;
         color: var(--color-text-white);
         position: relative;
-    }
-    .person-card::before,
-    .person-card::after {
-        content: "";
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        z-index: 2;
-
-        background:
-            radial-gradient(
-                circle,
-                var(--color-text-white) 3px,
-                transparent 3.5px
-            ),
-            linear-gradient(var(--color-text-white), var(--color-text-white))
-                left center / 7px 2px no-repeat,
-            linear-gradient(var(--color-text-white), var(--color-text-white))
-                right center / 7px 2px no-repeat,
-            linear-gradient(var(--color-text-white), var(--color-text-white))
-                center top / 2px 7px no-repeat,
-            linear-gradient(var(--color-text-white), var(--color-text-white))
-                center bottom / 2px 7px no-repeat;
-    }
-    .person-card::before {
-        top: 0;
-        left: 0;
-        transform: translate(-50%, -50%);
-    }
-
-    .person-card::after {
-        bottom: 0;
-        right: 0;
-        transform: translate(50%, 50%);
     }
 
     .card-header {

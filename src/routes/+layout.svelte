@@ -138,6 +138,45 @@
 	:global(h1),:global(h2),:global(h3){
 		font-family: var(--font-display);
 	}
+
+	
+	:global(.corner-decal) {
+		position: relative;
+	}
+    :global(.corner-decal::before),
+    :global(.corner-decal::after) {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        z-index: 2;
+
+        background:
+            radial-gradient(
+                circle,
+                var(--color-text-white) 3px,
+                transparent 3.5px
+            ),
+            linear-gradient(var(--color-text-white), var(--color-text-white))
+                left center / 7px 2px no-repeat,
+            linear-gradient(var(--color-text-white), var(--color-text-white))
+                right center / 7px 2px no-repeat,
+            linear-gradient(var(--color-text-white), var(--color-text-white))
+                center top / 2px 7px no-repeat,
+            linear-gradient(var(--color-text-white), var(--color-text-white))
+                center bottom / 2px 7px no-repeat;
+    }
+    :global(.corner-decal::before) {
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    :global(.corner-decal::after) {
+        bottom: 0;
+        right: 0;
+        transform: translate(50%, 50%);
+    }
     @media screen and (max-width: 628px) {
         :global(.container) {
             width: unset;
